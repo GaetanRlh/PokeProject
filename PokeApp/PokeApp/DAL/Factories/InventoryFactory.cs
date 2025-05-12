@@ -76,5 +76,55 @@ namespace PokeApp.DAL.Factories
 
             return new ItemInventory(items.ToList());
         }
+
+        public void AddToPokemonInventory(Pokemon pokemon)
+        {
+            MySqlConnection? mySqlCnn = null;
+
+            try
+            {
+                mySqlCnn = new MySqlConnection(DAL.Connection);
+                mySqlCnn.Open();
+
+                using (MySqlCommand mySqlCmd = mySqlCnn.CreateCommand())
+                {
+                    mySqlCmd.CommandText = @"CALL inventaire_pokemon(@Id);";
+                    mySqlCmd.Parameters.AddWithValue("@Id", pokemon.Id);
+                    mySqlCmd.ExecuteNonQuery();
+                }
+            }
+            finally
+            {
+                if (mySqlCnn != null)
+                {
+                    mySqlCnn.Close();
+                }
+            }
+        }
+
+        public void AddToItemInventory(Item item)
+        {
+            MySqlConnection? mySqlCnn = null;
+
+            try
+            {
+                mySqlCnn = new MySqlConnection(DAL.Connection);
+                mySqlCnn.Open();
+
+                using (MySqlCommand mySqlCmd = mySqlCnn.CreateCommand())
+                {
+                    mySqlCmd.CommandText = @"CALL inventaire_items(@Id);";
+                    mySqlCmd.Parameters.AddWithValue("@Id", item.Id);
+                    mySqlCmd.ExecuteNonQuery();
+                }
+            }
+            finally
+            {
+                if (mySqlCnn != null)
+                {
+                    mySqlCnn.Close();
+                }
+            }
+        }
     }
 }
