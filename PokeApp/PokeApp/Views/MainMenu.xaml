@@ -5,8 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokeApp.Views"
         mc:Ignorable="d"
-        Title="MainMenu" Height="450" Width="800">
-    <Grid>
-        
+        WindowStyle="None"
+        WindowState="Maximized"
+        Title="MainMenu" MinHeight="500" MinWidth="850" Height="500" Width="850" Background="White">
+
+    <Window.Resources>
+        <ImageBrush x:Key="BackgroundImage" ImageSource="Media/Images/TitleBackground.png" Stretch="UniformToFill"/>
+        <FontFamily x:Key="PixelFont">pack://application:,,,/Views/Media/Font/#Press Start 2P</FontFamily>
+    </Window.Resources>
+    
+    <Grid Background="{StaticResource BackgroundImage}">
+
+        <MediaElement Name="BackgroundVideo"
+                      Source="Views/Media/Video/mainvideo.mp4"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Stop"
+                      Stretch="Fill"
+                      MediaEnded="BackgroundVideo_MediaEnded"
+                      IsMuted="True"
+                      />
+
+        <MediaElement Name="BackgroundAudio"
+                  Source="Views/Media/Audio/mainaudio.mp3"
+                  LoadedBehavior="Manual"
+                  UnloadedBehavior="Stop"
+                  Volume="0.5"
+                  Visibility="Collapsed"
+                  MediaEnded="BackgroundVideo_MediaEnded" />
+
+        <MediaElement Name="TitleAudio"
+                  Source="Views/Media/Audio/titleaudio.mp3"
+                  LoadedBehavior="Manual"
+                  UnloadedBehavior="Stop"
+                  Volume="0.5"
+                  Visibility="Collapsed"
+                  MediaEnded="TitleAudio_MediaEnded" />
+
+        <Button Background="Transparent"
+            BorderThickness="0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Opacity="0.01"
+            Click="Button_Click" />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="0.75*"></RowDefinition>
+                <RowDefinition Height="0.75*"></RowDefinition>
+                <RowDefinition Height="0.75*"></RowDefinition>
+                <RowDefinition Height="0.75*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="TitleImage" Visibility="Hidden" Source="Media/Images/pokemonlogo.png" Grid.ColumnSpan="3"/>
+            <Image x:Name="Button1Image" Visibility="Hidden" Source="Media/Images/button.png" Grid.Column="1" Grid.Row="1" Margin="25"/>
+            <Button x:Name="Button1" Visibility="Hidden" Background="Transparent" Grid.Column="1" Grid.Row="1" Margin="100,25,100,25"
+            BorderThickness="0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Opacity="0.01"/>
+            <Label x:Name="Button1Label" Visibility="Hidden" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="25" FontWeight="Bold">Catch</Label>
+        </Grid>
     </Grid>
 </Window>

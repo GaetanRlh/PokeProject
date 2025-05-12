@@ -13,6 +13,9 @@ namespace PokeApp.DAL
         private ItemFactory? _itemFactory = null;
         private PokemonFactory? _pokemonFactory = null;
 
+        /*
+         * NE PAS OUBLIER DE CHANGER CE CONNECTION STRING POUR QUE L'APPLICATION MARCHE. À FIN DE FAIRE DES TESTS, CETTE STRING EST PAR DEFAUT EN LOCAL HOST
+         */
         public static string Connection
         {
             get

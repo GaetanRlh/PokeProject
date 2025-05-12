@@ -22,6 +22,32 @@ namespace PokeApp.Views
         public MainMenu()
         {
             InitializeComponent();
+            BackgroundVideo.Play();
+            BackgroundAudio.Play();
+        }
+
+        private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            BackgroundVideo.Position = System.TimeSpan.Zero;
+            BackgroundVideo.Play();
+            BackgroundAudio.Play();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BackgroundVideo.Stop();
+            BackgroundAudio.Stop();
+            BackgroundVideo.Visibility = Visibility.Hidden;
+            TitleAudio.Play();
+            Button1.Visibility = Visibility.Visible;
+            Button1Image.Visibility = Visibility.Visible;
+            Button1Label.Visibility = Visibility.Visible;
+            TitleImage.Visibility = Visibility.Visible;
+        }
+
+        private void TitleAudio_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            TitleAudio.Play();
         }
     }
 }
