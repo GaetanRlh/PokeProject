@@ -10,17 +10,16 @@ namespace PokeApp.Models
     public class Pokemon
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Cry {  get; set; }
-        public string Type { get; set; }
-        public BitmapImage Sprite { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Cry { get; set; } = string.Empty;
+        public string Sprite { get; set; } = string.Empty;
 
-        public Pokemon(int id,string name,string cry, string type, BitmapImage sprite)
+        public Pokemon() { }
+        public Pokemon(int id,string name, string cry, string sprite)
         {
             Id = id;
             Name = name;
             Cry = cry;
-            Type = type;
             Sprite = sprite;
         }
     }
