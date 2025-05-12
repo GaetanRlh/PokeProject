@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <None Remove="Views\Media\Audio\mainaudio.mp3" />
     <None Remove="Views\Media\Audio\titleaudio.mp3" />
     <None Remove="Views\Media\Font\PressStart2P-Regular.ttf" />
@@ -24,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+=======
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+>>>>>>> 9a5eb8fe1c6a3e2785a7be075231d24605cf876a
     <PackageReference Include="MySql.Data" Version="9.3.0" />
   </ItemGroup>
 
