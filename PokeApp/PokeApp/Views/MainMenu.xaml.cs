@@ -28,8 +28,9 @@ namespace PokeApp.Views
 
         private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
         {
-            BackgroundVideo.Position = System.TimeSpan.Zero;
+            BackgroundVideo.Stop();
             BackgroundVideo.Play();
+            BackgroundAudio.Stop();
             BackgroundAudio.Play();
         }
 
@@ -39,15 +40,68 @@ namespace PokeApp.Views
             BackgroundAudio.Stop();
             BackgroundVideo.Visibility = Visibility.Hidden;
             TitleAudio.Play();
+            TitleVideo.Play();
             Button1.Visibility = Visibility.Visible;
             Button1Image.Visibility = Visibility.Visible;
             Button1Label.Visibility = Visibility.Visible;
             TitleImage.Visibility = Visibility.Visible;
+            Button2Image.Visibility = Visibility.Visible;
+            Button2Label.Visibility = Visibility.Visible;
+            Button2.Visibility = Visibility.Visible;
+            Button3Image.Visibility = Visibility.Visible;
+            Button3Label.Visibility = Visibility.Visible;
+            Button3.Visibility = Visibility.Visible;
+            Button4Image.Visibility = Visibility.Visible;
+            Button4Label.Visibility = Visibility.Visible;
+            Button4.Visibility = Visibility.Visible;
+            MainButton.Visibility = Visibility.Hidden;
+        }
+
+        private void BattleVideo_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            BattleVideo.Visibility = Visibility.Hidden;
+            CatchUserControl.Visibility = Visibility.Visible;
+            CatchUserControl.GeneratePokemon();
+        }
+
+        private void BattleAudio_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            BattleAudio.Stop();
+            BattleAudio.Play();
         }
 
         private void TitleAudio_MediaEnded(object sender, RoutedEventArgs e)
         {
+            TitleAudio.Stop();
             TitleAudio.Play();
+        }
+
+        private void Title_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            TitleVideo.Stop();
+            TitleVideo.Play();
+        }
+
+        private void Catch_Click(object sender, RoutedEventArgs e)
+        {
+            TitleVideo.Stop();
+            TitleVideo.Visibility = Visibility.Hidden;
+            TitleAudio.Stop();
+            Button1.Visibility = Visibility.Hidden;
+            Button1Image.Visibility = Visibility.Hidden;
+            Button1Label.Visibility = Visibility.Hidden;
+            TitleImage.Visibility = Visibility.Hidden;
+            Button2Image.Visibility = Visibility.Hidden;
+            Button2Label.Visibility = Visibility.Hidden;
+            Button2.Visibility = Visibility.Hidden;
+            Button3Image.Visibility = Visibility.Hidden;
+            Button3Label.Visibility = Visibility.Hidden;
+            Button3.Visibility = Visibility.Hidden;
+            Button4Image.Visibility = Visibility.Hidden;
+            Button4Label.Visibility = Visibility.Hidden;
+            Button4.Visibility = Visibility.Hidden;
+            BattleVideo.Play();
+            BattleAudio.Play();
         }
     }
 }

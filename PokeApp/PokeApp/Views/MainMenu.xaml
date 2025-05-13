@@ -5,16 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokeApp.Views"
         mc:Ignorable="d"
-        WindowStyle="None"
         WindowState="Maximized"
-        Title="MainMenu" MinHeight="500" MinWidth="850" Height="500" Width="850" Background="White">
+        WindowStyle="None"
+        Title="MainMenu" Height="750" Width="1100" Background="White">
 
     <Window.Resources>
-        <ImageBrush x:Key="BackgroundImage" ImageSource="Media/Images/TitleBackground.png" Stretch="UniformToFill"/>
-        <FontFamily x:Key="PixelFont">pack://application:,,,/Views/Media/Font/#Press Start 2P</FontFamily>
+        <FontFamily x:Key="PixelFont">pack://application:,,,/Views/Media/Font/#Retro Gaming</FontFamily>
     </Window.Resources>
-    
-    <Grid Background="{StaticResource BackgroundImage}">
+
+    <Grid>
+        <local:CatchView x:Name="CatchUserControl" Visibility="Hidden"></local:CatchView>
+        <MediaElement Name="BattleVideo"
+                      Source="Views/Media/Video/battle.mp4"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Stop"
+                      Stretch="Fill"
+                      MediaEnded="BattleVideo_MediaEnded"
+                      IsMuted="True"/>
+
+        <MediaElement Name="BattleAudio"
+                      Source="Views/Media/Audio/battle.mp3"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Stop"
+                      Volume="0.5"
+                      Visibility="Collapsed"
+                      MediaEnded="BattleAudio_MediaEnded"/>
+        
+        <MediaElement Name="TitleVideo"
+                      Source="Views/Media/Video/TitleVideo.mp4"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Stop"
+                      Stretch="Fill"
+                      MediaEnded="Title_MediaEnded"
+                      IsMuted="True"/>
 
         <MediaElement Name="BackgroundVideo"
                       Source="Views/Media/Video/mainvideo.mp4"
@@ -22,8 +45,7 @@
                       UnloadedBehavior="Stop"
                       Stretch="Fill"
                       MediaEnded="BackgroundVideo_MediaEnded"
-                      IsMuted="True"
-                      />
+                      IsMuted="True"/>
 
         <MediaElement Name="BackgroundAudio"
                   Source="Views/Media/Audio/mainaudio.mp3"
@@ -31,7 +53,7 @@
                   UnloadedBehavior="Stop"
                   Volume="0.5"
                   Visibility="Collapsed"
-                  MediaEnded="BackgroundVideo_MediaEnded" />
+                  MediaEnded="BackgroundVideo_MediaEnded"/>
 
         <MediaElement Name="TitleAudio"
                   Source="Views/Media/Audio/titleaudio.mp3"
@@ -39,14 +61,15 @@
                   UnloadedBehavior="Stop"
                   Volume="0.5"
                   Visibility="Collapsed"
-                  MediaEnded="TitleAudio_MediaEnded" />
+                  MediaEnded="TitleAudio_MediaEnded"/>
 
-        <Button Background="Transparent"
+        <Button x:Name="MainButton"
+            Background="Transparent"
             BorderThickness="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Opacity="0.01"
-            Click="Button_Click" />
+            Click="Button_Click"/>
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -56,6 +79,7 @@
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="0.75*"></RowDefinition>
                 <RowDefinition Height="0.75*"></RowDefinition>
@@ -63,14 +87,38 @@
                 <RowDefinition Height="0.75*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Image x:Name="TitleImage" Visibility="Hidden" Source="Media/Images/pokemonlogo.png" Grid.ColumnSpan="3"/>
-            <Image x:Name="Button1Image" Visibility="Hidden" Source="Media/Images/button.png" Grid.Column="1" Grid.Row="1" Margin="25"/>
-            <Button x:Name="Button1" Visibility="Hidden" Background="Transparent" Grid.Column="1" Grid.Row="1" Margin="100,25,100,25"
+            <Image x:Name="TitleImage" Visibility="Hidden" Source="Media/Images/pokemonlogo.png" Grid.Column="1" Grid.Row="1"/>
+            <Image x:Name="Button1Image" Visibility="Hidden" Source="Media/Images/button.png" Grid.Column="1" Grid.Row="2" Margin="25"/>
+            <Button Panel.ZIndex="2" x:Name="Button1" Visibility="Hidden" Background="Transparent" Grid.Column="1" Grid.Row="2" Margin="100,25,100,25"
+            BorderThickness="0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Opacity="0.01" Click="Catch_Click"/>
+            <Label x:Name="Button1Label" Visibility="Hidden" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35" FontWeight="Bold">Catch</Label>
+
+            <Image x:Name="Button2Image" Visibility="Hidden" Source="Media/Images/button.png" Grid.Column="1" Grid.Row="3" Margin="25"/>
+            <Button Panel.ZIndex="2" x:Name="Button2" Visibility="Hidden" Background="Transparent" Grid.Column="1" Grid.Row="3" Margin="100,25,100,25"
             BorderThickness="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Opacity="0.01"/>
-            <Label x:Name="Button1Label" Visibility="Hidden" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="25" FontWeight="Bold">Catch</Label>
+            <Label x:Name="Button2Label" Visibility="Hidden" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35" FontWeight="Bold">Inventory</Label>
+
+            <Image x:Name="Button3Image" Visibility="Hidden" Source="Media/Images/button.png" Grid.Column="1" Grid.Row="4" Margin="25"/>
+            <Button Panel.ZIndex="2" x:Name="Button3" Visibility="Hidden" Background="Transparent" Grid.Column="1" Grid.Row="4" Margin="100,25,100,25"
+            BorderThickness="0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Opacity="0.01"/>
+            <Label x:Name="Button3Label" Visibility="Hidden" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35" FontWeight="Bold">Shop</Label>
+
+            <Image x:Name="Button4Image" Visibility="Hidden" Source="Media/Images/button.png" Grid.Column="1" Grid.Row="5" Margin="25"/>
+            <Button Panel.ZIndex="2" x:Name="Button4" Visibility="Hidden" Background="Transparent" Grid.Column="1" Grid.Row="5" Margin="100,25,100,25"
+            BorderThickness="0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Opacity="0.01"/>
+            <Label x:Name="Button4Label" Visibility="Hidden" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35" FontWeight="Bold">Exit</Label>
         </Grid>
     </Grid>
 </Window>

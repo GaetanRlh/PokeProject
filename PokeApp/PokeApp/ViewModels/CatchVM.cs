@@ -30,7 +30,6 @@ namespace PokeApp.ViewModels
             LoadInventory();
         }
 
-        [RelayCommand]
         public void StartEncounter()
         {
             CurrentPokemon = _dal.PokemonFactory.GetRandom();
@@ -40,7 +39,6 @@ namespace PokeApp.ViewModels
         public void CatchPokemon(Item pokeball)
         {
             bool success = false;
-            bool flee = false;
             if (CurrentPokemon == null || SelectedPokeball == null  ) { return; }
 
             do
@@ -67,10 +65,10 @@ namespace PokeApp.ViewModels
             Random rand = new();
             return pokeBallName switch
             {
-                "PokeBall" => rand.NextDouble() < 0.2,
-                "GreatBall" => rand.NextDouble() < 0.4,
-                "UltraBall" => rand.NextDouble() < 0.7,
-                "MasterBall" => true,
+                "Pokeball" => rand.NextDouble() < 0.2,
+                "Hyperball" => rand.NextDouble() < 0.4,
+                "Ultraball" => rand.NextDouble() < 0.7,
+                "Masterball" => true,
                 _ => false
             };
         }
