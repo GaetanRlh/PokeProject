@@ -1,28 +1,91 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Globalization;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using PokeApp.ViewModels;
+using static PokeApp.ViewModels.ShopVM;
 
 namespace PokeApp.Views
 {
-    /// <summary>
-    /// Interaction logic for ShopView.xaml
-    /// </summary>
     public partial class ShopView : UserControl
     {
+        private MediaPlayer _mediaPlayer = new MediaPlayer();
+        private readonly ShopVM _viewModel = new();
+
         public ShopView()
         {
             InitializeComponent();
+            this.DataContext = _viewModel;
+            this.Loaded += ShopView_Loaded;
+            PlayMusic();
+        }
+
+        private async void ShopView_Loaded(object sender, RoutedEventArgs e)
+        {
+            CharacterSprite.Source = new BitmapImage(new Uri("pack://application:,,,/Views/Media/Images/characterBack.png"));
+
+            DoubleAnimation moveForward = new()
+            {
+                From = 410,
+                To = 106,
+                Duration = TimeSpan.FromSeconds(2)
+            };
+            Storyboard.SetTarget(moveForward, CharacterSprite);
+            Storyboard.SetTargetProperty(moveForward, new PropertyPath("(Canvas.Top)"));
+
+            Storyboard storyboard1 = new();
+            storyboard1.Children.Add(moveForward);
+            storyboard1.Begin();
+
+            await Task.Delay(2000);
+
+            CharacterSprite.Source = new BitmapImage(new Uri("pack://application:,,,/Views/Media/Images/characterProfil.png"));
+
+            DoubleAnimation moveLeft = new()
+            {
+                From = 260,
+                To = 215,
+                Duration = TimeSpan.FromSeconds(2)
+            };
+            Storyboard.SetTarget(moveLeft, CharacterSprite);
+            Storyboard.SetTargetProperty(moveLeft, new PropertyPath("(Canvas.Left)"));
+
+            Storyboard storyboard2 = new();
+            storyboard2.Children.Add(moveLeft);
+            storyboard2.Begin();
+
+            await Task.Delay(2000);
+
+            LoadShopInterface();
+        }
+
+        private void LoadShopInterface()
+        {
+            AnimationCanvas.Visibility = Visibility.Visible;
+            ShopPanel.Visibility = Visibility.Visible;
+            _viewModel.LoadInventory(); // Make sure we load items
+        }
+
+        private void PlayMusic()
+        {
+            _mediaPlayer.Open(new Uri("Views/Media/Audio/pokemart.mp3", UriKind.Relative));
+            _mediaPlayer.MediaEnded += (s, e) =>
+            {
+                _mediaPlayer.Position = TimeSpan.Zero;
+                _mediaPlayer.Play();
+            };
+            _mediaPlayer.Volume = 0.5;
+            _mediaPlayer.Play();
+        }
+
+        public void StopMusic()
+        {
+            _mediaPlayer.Stop();
         }
     }
 }

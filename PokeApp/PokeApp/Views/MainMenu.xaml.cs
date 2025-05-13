@@ -103,5 +103,6 @@ namespace PokeApp.Views
             BattleVideo.Play();
             BattleAudio.Play();
         }
+
     }
 }
