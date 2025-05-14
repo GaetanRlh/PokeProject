@@ -20,7 +20,7 @@ namespace PokeApp.DAL
         {
             get
             {
-                return "Server=127.0.0.1;Port=3306;Database=pokemon_db;Uid=admin;Pwd=admin";
+                return "Server=sql.decinfo-cchic.ca;Port=33306;Database=h25_test_intro_api_2232508;Uid=dev-2232508;Pwd=Lucarinox123";
             }
         }
 
