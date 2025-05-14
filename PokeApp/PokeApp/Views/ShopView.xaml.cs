@@ -22,7 +22,6 @@ namespace PokeApp.Views
             InitializeComponent();
             this.DataContext = _viewModel;
             this.Loaded += ShopView_Loaded;
-            PlayMusic();
         }
 
         private async void ShopView_Loaded(object sender, RoutedEventArgs e)
@@ -68,24 +67,7 @@ namespace PokeApp.Views
         {
             AnimationCanvas.Visibility = Visibility.Visible;
             ShopPanel.Visibility = Visibility.Visible;
-            _viewModel.LoadInventory(); // Make sure we load items
-        }
-
-        private void PlayMusic()
-        {
-            _mediaPlayer.Open(new Uri("Views/Media/Audio/pokemart.mp3", UriKind.Relative));
-            _mediaPlayer.MediaEnded += (s, e) =>
-            {
-                _mediaPlayer.Position = TimeSpan.Zero;
-                _mediaPlayer.Play();
-            };
-            _mediaPlayer.Volume = 0.5;
-            _mediaPlayer.Play();
-        }
-
-        public void StopMusic()
-        {
-            _mediaPlayer.Stop();
+            _viewModel.LoadInventory();
         }
     }
 }

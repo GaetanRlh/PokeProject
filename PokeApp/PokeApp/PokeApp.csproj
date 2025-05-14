@@ -12,11 +12,17 @@
   <ItemGroup>
     <None Remove="Views\Media\Audio\battle.mp3" />
     <None Remove="Views\Media\Audio\mainaudio.mp3" />
+    <None Remove="Views\Media\Audio\pokemart.mp3" />
     <None Remove="Views\Media\Audio\titleaudio.mp3" />
     <None Remove="Views\Media\Font\Retro-Gaming.ttf" />
     <None Remove="Views\Media\Images\battle.png" />
     <None Remove="Views\Media\Images\button.png" />
+    <None Remove="Views\Media\Images\cashier.png" />
+    <None Remove="Views\Media\Images\characterBack.png" />
+    <None Remove="Views\Media\Images\characterProfil.png" />
     <None Remove="Views\Media\Images\pokemonlogo.png" />
+    <None Remove="Views\Media\Images\ShopBackground.png" />
+    <None Remove="Views\Media\Images\ShopUI.png" />
     <None Remove="Views\Media\Video\battle.mp4" />
     <None Remove="Views\Media\Video\mainvideo.mp4" />
     <None Remove="Views\Media\Video\TitleVideo.mp4" />
@@ -38,6 +44,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Media\Audio\mainaudio.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Media\Audio\pokemart.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Media\Audio\titleaudio.mp3">
@@ -65,7 +74,22 @@
     <Resource Include="Views\Media\Images\button.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Views\Media\Images\cashier.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Media\Images\characterBack.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Media\Images\characterProfil.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Views\Media\Images\pokemonlogo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Media\Images\ShopBackground.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Media\Images\ShopUI.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

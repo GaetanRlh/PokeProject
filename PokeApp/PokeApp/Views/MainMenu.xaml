@@ -15,6 +15,7 @@
 
     <Grid>
         <local:CatchView x:Name="CatchUserControl" Visibility="Hidden"></local:CatchView>
+        <local:ShopView x:Name="ShopUserControl" Visibility="Hidden"></local:ShopView>
         <MediaElement Name="BattleVideo"
                       Source="Views/Media/Video/battle.mp4"
                       LoadedBehavior="Manual"
@@ -109,7 +110,8 @@
             BorderThickness="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
-            Opacity="0.01"/>
+            Opacity="0.01"
+            Click="Shop_Click"/>
             <Label x:Name="Button3Label" Visibility="Hidden" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35" FontWeight="Bold">Shop</Label>
 
             <Image x:Name="Button4Image" Visibility="Hidden" Source="Media/Images/button.png" Grid.Column="1" Grid.Row="5" Margin="25"/>
@@ -119,6 +121,14 @@
             VerticalAlignment="Stretch"
             Opacity="0.01"/>
             <Label x:Name="Button4Label" Visibility="Hidden" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35" FontWeight="Bold">Exit</Label>
+            
+            <MediaElement Name="MartAudio"
+                      Source="Views/Media/Audio/pokemart.mp3"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Stop"
+                      Volume="0.5"
+                      Visibility="Collapsed"
+                      MediaEnded="MartAudio_MediaEnded"/>
         </Grid>
     </Grid>
 </Window>

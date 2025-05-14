@@ -13,7 +13,7 @@
     </UserControl.DataContext>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/PokeApp;component/Views/Media/Images/ShopBackground.png"
+            <ImageBrush ImageSource="Media/Images/ShopBackground.png"
                     Stretch="Fill"/>
         </Grid.Background>
 
@@ -26,7 +26,7 @@
         <Grid Name="ShopPanel" Visibility="Visible">
             <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="300" Margin="550,0,0,0">
 
-                <Image Source="pack://application:,,,/PokeApp;component/Views/Media/Images/ShopUI.png"
+                <Image Source="Media/Images/ShopUI.png"
                    Stretch="Fill"
                    Width="225" Height="250"
                    Canvas.Left="0" Canvas.Top="0"/>
@@ -56,6 +56,5 @@
                 </ItemsControl>
             </Canvas>
         </Grid>
-
     </Grid>
 </UserControl>

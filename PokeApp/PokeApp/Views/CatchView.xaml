@@ -34,7 +34,7 @@
             <RowDefinition Height="250*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label Foreground="#46413A" x:Name="PokemonName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="25" FontFamily="{StaticResource PixelFont}" Height="40"></Label>
+        <Label Foreground="#46413A" x:Name="PokemonName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="25" FontFamily="{StaticResource PixelFont}"></Label>
         <Image x:Name="Sprite" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2"></Image>
     </Grid>
 </UserControl>

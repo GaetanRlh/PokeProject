@@ -104,5 +104,33 @@ namespace PokeApp.Views
             BattleAudio.Play();
         }
 
+        private void Shop_Click(object sender, RoutedEventArgs e)
+        {
+            TitleVideo.Stop();
+            TitleVideo.Visibility = Visibility.Hidden;
+            TitleAudio.Stop();
+            Button1.Visibility = Visibility.Hidden;
+            Button1Image.Visibility = Visibility.Hidden;
+            Button1Label.Visibility = Visibility.Hidden;
+            TitleImage.Visibility = Visibility.Hidden;
+            Button2Image.Visibility = Visibility.Hidden;
+            Button2Label.Visibility = Visibility.Hidden;
+            Button2.Visibility = Visibility.Hidden;
+            Button3Image.Visibility = Visibility.Hidden;
+            Button3Label.Visibility = Visibility.Hidden;
+            Button3.Visibility = Visibility.Hidden;
+            Button4Image.Visibility = Visibility.Hidden;
+            Button4Label.Visibility = Visibility.Hidden;
+            Button4.Visibility = Visibility.Hidden;
+            ShopUserControl.Visibility = Visibility.Visible;
+            MartAudio.Play();
+        }
+
+
+        private void MartAudio_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            MartAudio.Pause();
+            MartAudio.Play();
+        }
     }
 }
