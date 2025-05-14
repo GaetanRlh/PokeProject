@@ -4,9 +4,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using PokeApp.DAL;
+using PokeApp.Models;
 using PokeApp.ViewModels;
 using static PokeApp.ViewModels.ShopVM;
 
@@ -17,6 +20,8 @@ namespace PokeApp.Views
         private MediaPlayer _mediaPlayer = new MediaPlayer();
         private readonly ShopVM _viewModel = new();
         private bool _hasAnimated = false;
+        private List<Item>? items;
+        private DAL.DAL dAL = new DAL.DAL();
 
         public ShopView()
         {
@@ -32,6 +37,64 @@ namespace PokeApp.Views
                 _hasAnimated = true;
                 StartEntranceAnimation();
             }
+        }
+
+        private void LoadImages()
+        {
+            Grid grid = new Grid();
+            items = dAL.ItemFactory.GetAll();
+            int totalImages = items.Count;
+
+            for (int i = 0; i < 3; i++)
+            {
+                grid.ColumnDefinitions.Add(new ColumnDefinition());
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                grid.RowDefinitions.Add(new RowDefinition());
+            }
+
+            int rowIndex = 0, colIndex = 0, index = 0;
+            int tag = 1;
+            foreach (Item item in items)
+            {
+                Image img = new Image
+                {
+                    Source = new BitmapImage(new Uri(item.Sprite, UriKind.Absolute)),
+                    Width = 25,
+                    Height = 25,
+                    Tag = tag++,
+                    Cursor = Cursors.Hand,
+                    Margin = new Thickness(5)
+                };
+
+                img.MouseDown += (s, e) => Click(s, e, item);
+
+                Grid.SetRow(img, rowIndex);
+                Grid.SetColumn(img, colIndex);
+
+                grid.Children.Add(img);
+
+                if (index == 0 || index == 1)
+                {
+                    index++;
+                    colIndex++;
+                }
+                else
+                {
+                    index = 0;
+                    colIndex = 0;
+                    rowIndex++;
+                }
+            }
+
+            UI.Children.Add(grid);
+        }
+
+        private void Click(object sender, MouseButtonEventArgs e, Item item)
+        {
+            dAL.InventoryFactory.AddToItemInventory(item);
         }
 
         private void StartEntranceAnimation()
@@ -81,6 +144,7 @@ namespace PokeApp.Views
         {
             AnimationCanvas.Visibility = Visibility.Visible;
             ShopPanel.Visibility = Visibility.Visible;
+            LoadImages();
             _viewModel.LoadInventory();
         }
 
@@ -96,6 +160,7 @@ namespace PokeApp.Views
             if (Window.GetWindow(this) is MainMenu mainWindow)
             {
                 mainWindow.TitleVideo.Visibility = Visibility.Visible;
+                mainWindow.MartAudio.Stop();
                 mainWindow.TitleVideo.Play();
                 mainWindow.TitleAudio.Play();
                 _mediaPlayer.Stop();

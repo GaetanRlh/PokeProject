@@ -120,7 +120,7 @@
             BorderThickness="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
-            Opacity="0.01" Click="Button4_Click"/>
+            Opacity="0.01"/>
             <Label x:Name="Button4Label" Visibility="Hidden" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35" FontWeight="Bold">Exit</Label>
             
             <MediaElement Name="MartAudio"

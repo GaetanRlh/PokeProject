@@ -15,7 +15,6 @@
                     Stretch="Fill"/>
         </Grid.Background>
 
-        <Grid Width="300" Height="350" Name="ShopPanel" Visibility="Visible">
         <Canvas Name="AnimationCanvas">
             <Image Name="CharacterSprite"
            Width="100" Height="100"
@@ -24,46 +23,16 @@
 
         <Grid Name="ShopPanel" Visibility="Collapsed">
             <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Width="250" Height="300" Margin="0,20,50,0">
-
-               <Image Source="Media/Images/ShopUI.png"
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1" x:Name="UI"></Grid>
+                <Image Source="Media/Images/ShopUI.png"
                Stretch="Fill"
                Width="250" Height="300"
-               Panel.ZIndex="0"/>
-
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Panel.ZIndex="1">
-                    <ItemsControl ItemsSource="{Binding Inventory}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <Canvas />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Button Width="180" Height="40"
-                                Content="{Binding Name, StringFormat={}{0} - {Binding Price}₽}"
-                                Command="{Binding DataContext.BuyItemCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                CommandParameter="{Binding}">
-                                    <Button.Content>
-                                        <TextBlock>
-                                    <Run Text="{Binding Name}" />
-                                    <Run Text=" - " />
-                                    <Run Text="{Binding Price}" />
-                                    <Run Text="₽" />
-                                        </TextBlock>
-                                    </Button.Content>
-                                </Button>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-
-                    <ItemsControl.ItemContainerStyle>
-                        <Style TargetType="ContentPresenter">
-                            <Setter Property="Canvas.Left" Value="30" />
-                            <Setter Property="Canvas.Top" Value="50"/>
-                        </Style>
-                    </ItemsControl.ItemContainerStyle>
-                </ItemsControl>
-            </Canvas>
+               Grid.Row="0" Grid.RowSpan="2"
+               Panel.ZIndex="-1"/>
             </Grid>
         </Grid>
 

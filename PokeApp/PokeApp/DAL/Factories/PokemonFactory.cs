@@ -71,7 +71,7 @@ namespace PokeApp.DAL.Factories
                 {
                     pokemons.Add(CreateFromReader(mySqlDataReader));
                 }
-                pokemon = pokemons[rnd.Next(pokemons.Count)];
+                pokemon = pokemons[rnd.Next(pokemons.Count + 1)];
             }
             finally
             {
