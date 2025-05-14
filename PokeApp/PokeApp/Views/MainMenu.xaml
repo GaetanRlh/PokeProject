@@ -16,6 +16,7 @@
     <Grid>
         <local:CatchView x:Name="CatchUserControl" Visibility="Hidden"></local:CatchView>
         <local:ShopView x:Name="ShopUserControl" Visibility="Hidden"></local:ShopView>
+        <local:BoxView x:Name="BoxUserControl" Visibility="Hidden"></local:BoxView>
         <MediaElement Name="BattleVideo"
                       Source="Views/Media/Video/battle.mp4"
                       LoadedBehavior="Manual"
@@ -102,8 +103,8 @@
             BorderThickness="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
-            Opacity="0.01"/>
-            <Label x:Name="Button2Label" Visibility="Hidden" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35" FontWeight="Bold">Inventory</Label>
+            Opacity="0.01" Click="Button2_Click"/>
+            <Label x:Name="Button2Label" Visibility="Hidden" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35" FontWeight="Bold">Pokebox</Label>
 
             <Image x:Name="Button3Image" Visibility="Hidden" Source="Media/Images/button.png" Grid.Column="1" Grid.Row="4" Margin="25"/>
             <Button Panel.ZIndex="2" x:Name="Button3" Visibility="Hidden" Background="Transparent" Grid.Column="1" Grid.Row="4" Margin="100,25,100,25"
@@ -119,7 +120,7 @@
             BorderThickness="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
-            Opacity="0.01"/>
+            Opacity="0.01" Click="Button4_Click"/>
             <Label x:Name="Button4Label" Visibility="Hidden" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35" FontWeight="Bold">Exit</Label>
             
             <MediaElement Name="MartAudio"

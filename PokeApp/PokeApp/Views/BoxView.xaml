@@ -6,7 +6,37 @@
              xmlns:local="clr-namespace:PokeApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    
+    <UserControl.Resources>
+        <ImageBrush x:Key="Image"
+                ImageSource="Media/Images/pokebox.png"
+                TileMode="Tile"
+                Viewport="0,0,100,100"
+                ViewportUnits="Absolute"
+                Stretch="None" />
+        <FontFamily x:Key="PixelFont">pack://application:,,,/Views/Media/Font/#Retro Gaming</FontFamily>
+    </UserControl.Resources>
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Background="{StaticResource Image}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Panel.ZIndex="2" x:Name="Button1" Visibility="Visible" Background="Transparent" Grid.Column="1" Margin="10,10,10,10"
+                BorderThickness="0"
+                Opacity="0.01" Click="Exit_Click"/>
+                <Image Source="Media/Images/button.png" Grid.Column="1" Margin="10,10,10,10"/>
+                <Label Grid.Column="1" Content="Exit" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="30"/>
+            </Grid>
+            <Grid x:Name="PokeBox" Grid.Row="1"></Grid>
+        </Grid>
+    </ScrollViewer>
 </UserControl>

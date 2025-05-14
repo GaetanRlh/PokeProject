@@ -157,5 +157,53 @@ namespace PokeApp.Views
             MartAudio.Pause();
             MartAudio.Play();
         }
+
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            TitleVideo.Stop();
+            TitleVideo.Visibility = Visibility.Hidden;
+            Button1.Visibility = Visibility.Hidden;
+            Button1Image.Visibility = Visibility.Hidden;
+            Button1Label.Visibility = Visibility.Hidden;
+            TitleImage.Visibility = Visibility.Hidden;
+            Button2Image.Visibility = Visibility.Hidden;
+            Button2Label.Visibility = Visibility.Hidden;
+            Button2.Visibility = Visibility.Hidden;
+            Button3Image.Visibility = Visibility.Hidden;
+            Button3Label.Visibility = Visibility.Hidden;
+            Button3.Visibility = Visibility.Hidden;
+            Button4Image.Visibility = Visibility.Hidden;
+            Button4Label.Visibility = Visibility.Hidden;
+            Button4.Visibility = Visibility.Hidden;
+            BoxUserControl.Construct(this);
+            BoxUserControl.Visibility = Visibility.Visible;
+            BoxUserControl.LoadImages();
+        }
+
+        public void BoxExit()
+        {
+            BoxUserControl.Visibility = Visibility.Hidden;
+            TitleVideo.Visibility = Visibility.Visible;
+            TitleVideo.Play();
+            Button1.Visibility = Visibility.Visible;
+            Button1Image.Visibility = Visibility.Visible;
+            Button1Label.Visibility = Visibility.Visible;
+            TitleImage.Visibility = Visibility.Visible;
+            Button2Image.Visibility = Visibility.Visible;
+            Button2Label.Visibility = Visibility.Visible;
+            Button2.Visibility = Visibility.Visible;
+            Button3Image.Visibility = Visibility.Visible;
+            Button3Label.Visibility = Visibility.Visible;
+            Button3.Visibility = Visibility.Visible;
+            Button4Image.Visibility = Visibility.Visible;
+            Button4Label.Visibility = Visibility.Visible;
+            Button4.Visibility = Visibility.Visible;
+            MainButton.Visibility = Visibility.Hidden;
+        }
+
+        private void Button4_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0x1);
+        }
     }
 }

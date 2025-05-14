@@ -152,6 +152,8 @@ namespace PokeApp.Views
             bool isSuccess = catchVM.CatchPokemon(item);
             if (isSuccess)
             {
+                ItemBag.Visibility = Visibility.Hidden;
+                Items.Children.Clear();
                 this.Visibility = Visibility.Hidden;
                 menu!.CatchOver();
             }

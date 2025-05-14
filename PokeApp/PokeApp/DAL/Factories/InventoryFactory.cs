@@ -19,9 +19,16 @@ namespace PokeApp.DAL.Factories
             _itemFactory = itemFactory;
         }
 
-        public int CreateFromReader(MySqlDataReader mySql)
+        public int CreateFromReaderItem(MySqlDataReader mySql)
         {
             int id = (int)mySql["ItemId"];
+
+            return id;
+        }
+
+        public int CreateFromReaderPokemon(MySqlDataReader mySql)
+        {
+            int id = (int)mySql["PokemonId"];
 
             return id;
         }
@@ -44,7 +51,7 @@ namespace PokeApp.DAL.Factories
                 mySqlDataReader = mySqlCmd.ExecuteReader();
                 while (mySqlDataReader.Read())
                 {
-                    ids.Add(CreateFromReader(mySqlDataReader));
+                    ids.Add(CreateFromReaderPokemon(mySqlDataReader));
                 }
 
                 foreach (int id in ids)
@@ -79,7 +86,7 @@ namespace PokeApp.DAL.Factories
                 mySqlDataReader = mySqlCmd.ExecuteReader();
                 while (mySqlDataReader.Read())
                 {
-                    ids.Add(CreateFromReader(mySqlDataReader));
+                    ids.Add(CreateFromReaderItem(mySqlDataReader));
                 }
                 
                 foreach(int id in ids)

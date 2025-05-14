@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS tbl_items;
 CREATE TABLE IF NOT EXISTS tbl_items(
 	ItemId INT PRIMARY KEY,
     ItemName VARCHAR(25) NOT NULL,
+    ItemSprite VARCHAR(150) NOT NULL,
     ItemPrice DECIMAL NOT NULL DEFAULT 0
 );
 
@@ -51,11 +52,12 @@ DROP PROCEDURE IF EXISTS ajouter_item$$
 CREATE PROCEDURE ajouter_item(
 	IN item_id INT,
     IN item_name VARCHAR(25),
+    IN item_sprite VARCHAR(150),
     IN item_price DECIMAL
 )
 BEGIN
-	INSERT INTO tbl_items (ItemId, ItemName, ItemPrice)
-    VALUES (item_id, item_name, item_price);
+	INSERT INTO tbl_items (ItemId, ItemName, ItemSprite, ItemPrice)
+    VALUES (item_id, item_name, item_sprite, item_price);
 END $$
 
 DELIMITER ;
@@ -96,25 +98,36 @@ DELIMITER ;
 CALL ajouter_item(
 	1,
     "Pokéball",
+    "https://grid-paint.com/images/png/2017/11/10/4909218658254848.png",
     100
 );
 
 CALL ajouter_item(
 	2,
-    "Hyperball",
+    "Greatball",
+    "https://grid-paint.com/images/png/2017/11/10/5993222098649088.png",
     250
 );
 
 CALL ajouter_item(
 	3,
-    "Ultraball",
+    "Masterball",
+    "http://pngkey.com/png/full/228-2289979_master-ball-pixel-art-pokemon-pokeball.png",
     500
 );
 
-CALL ajouter_item(
-	4,
-    "Masterball",
-    1000
+/* Inventaire */
+
+CALL inventaire_items(
+	1
+);
+
+CALL inventaire_items(
+	1
+);
+
+CALL inventaire_items(
+	1
 );
 
 /* Pokémon */
