@@ -60,6 +60,7 @@ namespace PokeApp.Views
         private void BattleVideo_MediaEnded(object sender, RoutedEventArgs e)
         {
             BattleVideo.Visibility = Visibility.Hidden;
+            BattleVideo.Stop();
             CatchUserControl.Visibility = Visibility.Visible;
             CatchUserControl.GeneratePokemon();
         }
@@ -84,6 +85,8 @@ namespace PokeApp.Views
 
         private void Catch_Click(object sender, RoutedEventArgs e)
         {
+            BattleVideo.Visibility = Visibility.Visible;
+            CatchUserControl.Construct(this);
             TitleVideo.Stop();
             TitleVideo.Visibility = Visibility.Hidden;
             TitleAudio.Stop();
@@ -102,6 +105,28 @@ namespace PokeApp.Views
             Button4.Visibility = Visibility.Hidden;
             BattleVideo.Play();
             BattleAudio.Play();
+        }
+
+        public void CatchOver()
+        {
+            BattleAudio.Stop();
+            TitleAudio.Play();
+            TitleVideo.Visibility = Visibility.Visible;
+            TitleVideo.Play();
+            Button1.Visibility = Visibility.Visible;
+            Button1Image.Visibility = Visibility.Visible;
+            Button1Label.Visibility = Visibility.Visible;
+            TitleImage.Visibility = Visibility.Visible;
+            Button2Image.Visibility = Visibility.Visible;
+            Button2Label.Visibility = Visibility.Visible;
+            Button2.Visibility = Visibility.Visible;
+            Button3Image.Visibility = Visibility.Visible;
+            Button3Label.Visibility = Visibility.Visible;
+            Button3.Visibility = Visibility.Visible;
+            Button4Image.Visibility = Visibility.Visible;
+            Button4Label.Visibility = Visibility.Visible;
+            Button4.Visibility = Visibility.Visible;
+            MainButton.Visibility = Visibility.Hidden;
         }
 
         private void Shop_Click(object sender, RoutedEventArgs e)

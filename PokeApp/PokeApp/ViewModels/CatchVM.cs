@@ -34,23 +34,24 @@ namespace PokeApp.ViewModels
         {
             CurrentPokemon = _dal.PokemonFactory.GetRandom();
         }
-
-        [RelayCommand]
-        public void CatchPokemon(Item pokeball)
+        public bool CatchPokemon(Item pokeball)
         {
             bool success = false;
-            if (CurrentPokemon == null || SelectedPokeball == null  ) { return; }
+            if (CurrentPokemon == null) { return false; }
 
-            do
+            success = SimulateCatch(pokeball.Name);
+            UsePokeball(pokeball);
+
+            if (success)
             {
-                UsePokeball(SelectedPokeball);
-                success = SimulateCatch(SelectedPokeball.Name);
-
-            } while (!success);
-
-            _dal.InventoryFactory.AddToPokemonInventory(CurrentPokemon);
-            CurrentPokemon = null;
-            LoadInventory();
+                _dal.InventoryFactory.AddToPokemonInventory(CurrentPokemon);
+                CurrentPokemon = null;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         [RelayCommand]
@@ -65,9 +66,8 @@ namespace PokeApp.ViewModels
             Random rand = new();
             return pokeBallName switch
             {
-                "Pokeball" => rand.NextDouble() < 0.2,
-                "Hyperball" => rand.NextDouble() < 0.4,
-                "Ultraball" => rand.NextDouble() < 0.7,
+                "Pokeball" => rand.NextDouble() < 0.25,
+                "Greatball" => rand.NextDouble() < 0.5,
                 "Masterball" => true,
                 _ => false
             };
@@ -77,7 +77,10 @@ namespace PokeApp.ViewModels
         {
             var match = ItemInventory.FirstOrDefault(i => i.Id == item.Id);
             if (match != null)
+            {
                 ItemInventory.Remove(match);
+                _dal.InventoryFactory.DeleteFromItemInventory(item);
+            }
         }
 
         public void LoadInventory()

@@ -14,9 +14,10 @@ namespace PokeApp.DAL.Factories
         {
             int id = (int)mySql["ItemId"];
             string name = mySql["ItemName"].ToString() ?? "";
+            string sprite = mySql["ItemSprite"].ToString() ?? "";
             decimal price = (decimal)mySql["ItemPrice"];
 
-            return new Item(id, name, price);
+            return new Item(id, name, sprite, price);
         }
 
         public Item Get(int id)
@@ -38,6 +39,35 @@ namespace PokeApp.DAL.Factories
                 if (mySqlDataReader.Read())
                 {
                     item = CreateFromReader(mySqlDataReader);
+                }
+            }
+            finally
+            {
+                mySqlDataReader?.Close();
+                mySqlCnn?.Close();
+            }
+
+            return item;
+        }
+
+        public List<Item> GetAll()
+        {
+            List<Item> item = new List<Item>();
+            MySqlConnection? mySqlCnn = null;
+            MySqlDataReader? mySqlDataReader = null;
+
+            try
+            {
+                mySqlCnn = new MySqlConnection(DAL.Connection);
+                mySqlCnn.Open();
+
+                MySqlCommand mySqlCmd = mySqlCnn.CreateCommand();
+                mySqlCmd.CommandText = "SELECT * FROM tbl_items";
+
+                mySqlDataReader = mySqlCmd.ExecuteReader();
+                while (mySqlDataReader.Read())
+                {
+                    item.Add(CreateFromReader(mySqlDataReader));
                 }
             }
             finally

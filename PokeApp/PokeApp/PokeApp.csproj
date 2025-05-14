@@ -20,6 +20,8 @@
     <None Remove="Views\Media\Images\cashier.png" />
     <None Remove="Views\Media\Images\characterBack.png" />
     <None Remove="Views\Media\Images\characterProfil.png" />
+    <None Remove="Views\Media\Images\itembag.png" />
+    <None Remove="Views\Media\Images\pokebox.png" />
     <None Remove="Views\Media\Images\pokemonlogo.png" />
     <None Remove="Views\Media\Images\ShopBackground.png" />
     <None Remove="Views\Media\Images\ShopUI.png" />
@@ -62,6 +64,15 @@
     <Content Include="Views\Media\Video\TitleVideo.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Media\Images\itembag.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Media\Images\pokebox.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

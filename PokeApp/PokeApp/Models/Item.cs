@@ -10,13 +10,15 @@ namespace PokeApp.Models
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
+        public string Sprite { get; set; } = string.Empty;
         public decimal Price { get; set; }
 
         public Item() { }
-        public Item(int id, string name, decimal price)
+        public Item(int id, string name, string sprite, decimal price)
         {
             Id = id;
             Name = name;
+            Sprite = sprite;
             Price = price;
         }
     }
