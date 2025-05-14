@@ -15,7 +15,11 @@
                     Stretch="Fill"/>
         </Grid.Background>
 
+<<<<<<< HEAD
         <Grid Width="300" Height="350" Name="ShopPanel" Visibility="Visible">
+            <Image Source="Media/Images/ShopUI.png"
+                   Stretch="Fill"/>
+=======
         <Canvas Name="AnimationCanvas">
             <Image Name="CharacterSprite"
            Width="100" Height="100"
@@ -32,16 +36,9 @@
 
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Panel.ZIndex="1">
                     <ItemsControl ItemsSource="{Binding Inventory}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <Canvas />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Button Width="180" Height="40"
-                                Content="{Binding Name, StringFormat={}{0} - {Binding Price}₽}"
                                 Command="{Binding DataContext.BuyItemCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                 CommandParameter="{Binding}">
                                     <Button.Content>
@@ -53,18 +50,12 @@
                                         </TextBlock>
                                     </Button.Content>
                                 </Button>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-
-                    <ItemsControl.ItemContainerStyle>
-                        <Style TargetType="ContentPresenter">
-                            <Setter Property="Canvas.Left" Value="30" />
-                            <Setter Property="Canvas.Top" Value="50"/>
-                        </Style>
-                    </ItemsControl.ItemContainerStyle>
-                </ItemsControl>
-            </Canvas>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
             </Grid>
+>>>>>>> 24c9d8046eb621367fc2491295e087c655a63f7b
         </Grid>
 
         <Grid>

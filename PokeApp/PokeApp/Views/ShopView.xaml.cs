@@ -16,51 +16,65 @@ namespace PokeApp.Views
     {
         private MediaPlayer _mediaPlayer = new MediaPlayer();
         private readonly ShopVM _viewModel = new();
+        private bool _hasAnimated = false;
 
         public ShopView()
         {
             InitializeComponent();
             this.DataContext = _viewModel;
-            this.Loaded += ShopView_Loaded;
+            this.IsVisibleChanged += ShopView_IsVisibleChanged;
         }
 
-        private async void ShopView_Loaded(object sender, RoutedEventArgs e)
+        private void ShopView_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
+            if (IsVisible && !_hasAnimated)
+            {
+                _hasAnimated = true;
+                StartEntranceAnimation();
+            }
+        }
+
+        private void StartEntranceAnimation()
+        {
+            Canvas.SetTop(CharacterSprite, 690);
+            Canvas.SetLeft(CharacterSprite, 350);
             CharacterSprite.Source = new BitmapImage(new Uri("pack://application:,,,/Views/Media/Images/characterBack.png"));
 
-            DoubleAnimation moveForward = new()
+            DoubleAnimation moveUp = new()
             {
-                From = 410,
-                To = 106,
-                Duration = TimeSpan.FromSeconds(2)
+                From = 690,
+                To = 180,
+                Duration = TimeSpan.FromSeconds(2),
+                FillBehavior = FillBehavior.HoldEnd
             };
-            Storyboard.SetTarget(moveForward, CharacterSprite);
-            Storyboard.SetTargetProperty(moveForward, new PropertyPath("(Canvas.Top)"));
 
-            Storyboard storyboard1 = new();
-            storyboard1.Children.Add(moveForward);
-            storyboard1.Begin();
+            Storyboard storyboardUp = new();
+            storyboardUp.Children.Add(moveUp);
+            Storyboard.SetTarget(moveUp, CharacterSprite);
+            Storyboard.SetTargetProperty(moveUp, new PropertyPath("(Canvas.Top)"));
 
-            await Task.Delay(2000);
-
-            CharacterSprite.Source = new BitmapImage(new Uri("pack://application:,,,/Views/Media/Images/characterProfil.png"));
-
-            DoubleAnimation moveLeft = new()
+            storyboardUp.Completed += (s, args) =>
             {
-                From = 260,
-                To = 215,
-                Duration = TimeSpan.FromSeconds(2)
+                CharacterSprite.Source = new BitmapImage(new Uri("pack://application:,,,/Views/Media/Images/characterProfil.png"));
+
+                DoubleAnimation moveLeft = new()
+                {
+                    From = 350,
+                    To = 290,
+                    Duration = TimeSpan.FromSeconds(2),
+                    FillBehavior = FillBehavior.HoldEnd
+                };
+
+                Storyboard storyboardLeft = new();
+                storyboardLeft.Children.Add(moveLeft);
+                Storyboard.SetTarget(moveLeft, CharacterSprite);
+                Storyboard.SetTargetProperty(moveLeft, new PropertyPath("(Canvas.Left)"));
+
+                storyboardLeft.Completed += (ss, ee) => LoadShopInterface();
+                storyboardLeft.Begin();
             };
-            Storyboard.SetTarget(moveLeft, CharacterSprite);
-            Storyboard.SetTargetProperty(moveLeft, new PropertyPath("(Canvas.Left)"));
 
-            Storyboard storyboard2 = new();
-            storyboard2.Children.Add(moveLeft);
-            storyboard2.Begin();
-
-            await Task.Delay(2000);
-
-            LoadShopInterface();
+            storyboardUp.Begin();
         }
 
         private void LoadShopInterface()
@@ -68,6 +82,39 @@ namespace PokeApp.Views
             AnimationCanvas.Visibility = Visibility.Visible;
             ShopPanel.Visibility = Visibility.Visible;
             _viewModel.LoadInventory();
+        }
+
+        private void BackToMenu_Click(object sender, RoutedEventArgs e)
+        {
+            // Hide this view and stop music if needed
+            this.Visibility = Visibility.Hidden;
+
+            // Optional: stop animations or media
+            // _mediaPlayer.Stop();
+
+            // Show main menu again (find parent window)
+            if (Window.GetWindow(this) is MainMenu mainWindow)
+            {
+                mainWindow.TitleVideo.Visibility = Visibility.Visible;
+                mainWindow.TitleVideo.Play();
+                mainWindow.TitleAudio.Play();
+                _mediaPlayer.Stop();
+
+                // Reset visibility of buttons
+                mainWindow.Button1.Visibility = Visibility.Visible;
+                mainWindow.Button1Image.Visibility = Visibility.Visible;
+                mainWindow.Button1Label.Visibility = Visibility.Visible;
+                mainWindow.TitleImage.Visibility = Visibility.Visible;
+                mainWindow.Button2.Visibility = Visibility.Visible;
+                mainWindow.Button2Image.Visibility = Visibility.Visible;
+                mainWindow.Button2Label.Visibility = Visibility.Visible;
+                mainWindow.Button3.Visibility = Visibility.Visible;
+                mainWindow.Button3Image.Visibility = Visibility.Visible;
+                mainWindow.Button3Label.Visibility = Visibility.Visible;
+                mainWindow.Button4.Visibility = Visibility.Visible;
+                mainWindow.Button4Image.Visibility = Visibility.Visible;
+                mainWindow.Button4Label.Visibility = Visibility.Visible;
+            }
         }
     }
 }
