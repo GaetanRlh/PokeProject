@@ -4,13 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PokeApp.Views"
-             xmlns:viewmodel="clr-namespace:PokeApp.ViewModels"
+             xmlns:viewmodel="clr-namespace:PokeApp.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodel:ShopVM}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="750" d:DesignWidth="1100">
 
-    <UserControl.DataContext>
-        <viewmodel:ShopVM/>
-    </UserControl.DataContext>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Media/Images/ShopBackground.png"
@@ -19,42 +17,56 @@
 
         <Canvas Name="AnimationCanvas">
             <Image Name="CharacterSprite"
-           Width="64" Height="64"
-           Canvas.Left="260" Canvas.Top="410"/>
+           Width="100" Height="100"
+           Canvas.Left="350" Canvas.Top="690"/>
         </Canvas>
 
-        <Grid Name="ShopPanel" Visibility="Visible">
-            <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="300" Margin="550,0,0,0">
+        <Grid Name="ShopPanel" Visibility="Collapsed">
+            <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Width="250" Height="300" Margin="0,20,50,0">
 
-                <Image Source="Media/Images/ShopUI.png"
-                   Stretch="Fill"
-                   Width="225" Height="250"
-                   Canvas.Left="0" Canvas.Top="0"/>
+               <Image Source="Media/Images/ShopUI.png"
+               Stretch="Fill"
+               Width="250" Height="300"
+               Panel.ZIndex="0"/>
 
-                <ItemsControl ItemsSource="{Binding Inventory}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <Canvas />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Button Width="180" Height="40"
-                                Content="{Binding Name, StringFormat={}{0} - {Binding Price}₽}"
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Panel.ZIndex="1">
+                    <ItemsControl ItemsSource="{Binding Inventory}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Width="180" Height="40"
                                 Command="{Binding DataContext.BuyItemCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                CommandParameter="{Binding}" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-
-                    <ItemsControl.ItemContainerStyle>
-                        <Style TargetType="ContentPresenter">
-                            <Setter Property="Canvas.Left" Value="30" />
-                            <Setter Property="Canvas.Top" Value="50"/>
-                        </Style>
-                    </ItemsControl.ItemContainerStyle>
-                </ItemsControl>
-            </Canvas>
+                                CommandParameter="{Binding}">
+                                    <Button.Content>
+                                        <TextBlock>
+                                    <Run Text="{Binding Name}" />
+                                    <Run Text=" - " />
+                                    <Run Text="{Binding Price}" />
+                                    <Run Text="₽" />
+                                        </TextBlock>
+                                    </Button.Content>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Grid>
         </Grid>
+
+        <Grid>
+            <Button Width="120" Height="40"
+            Content="← Back"
+            FontFamily="pack://application:,,,/Views/Media/Font/#Retro Gaming"
+            FontSize="18"
+            FontWeight="Bold"
+            Foreground="White"
+            Background="DarkRed"
+            BorderBrush="Black"
+            BorderThickness="2"
+            Click="BackToMenu_Click"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Margin="50"/>
+        </Grid>
+
     </Grid>
 </UserControl>

@@ -115,7 +115,7 @@
             <Label x:Name="Button3Label" Visibility="Hidden" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35" FontWeight="Bold">Shop</Label>
 
             <Image x:Name="Button4Image" Visibility="Hidden" Source="Media/Images/button.png" Grid.Column="1" Grid.Row="5" Margin="25"/>
-            <Button Panel.ZIndex="2" x:Name="Button4" Visibility="Hidden" Background="Transparent" Grid.Column="1" Grid.Row="5" Margin="100,25,100,25"
+            <Button Panel.ZIndex="2" x:Name="Button4" Click="Button4_Click" Visibility="Hidden" Background="Transparent" Grid.Column="1" Grid.Row="5" Margin="100,25,100,25"
             BorderThickness="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"

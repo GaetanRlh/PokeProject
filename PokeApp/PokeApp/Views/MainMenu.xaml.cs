@@ -132,5 +132,10 @@ namespace PokeApp.Views
             MartAudio.Pause();
             MartAudio.Play();
         }
+
+        private void Button4_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
