@@ -29,13 +29,13 @@ namespace PokeApp.Views
     /// </summary>
     public partial class CatchView : UserControl
     {
-        private CatchVM catchVM;
-        private LibVLC _libVLC;
-        private LibVLCSharp.Shared.MediaPlayer _mediaPlayer;
-        private Media? _currentCry;
-        private DAL.DAL dAL = new DAL.DAL();
-        private ItemInventory inventory;
-        private MainMenu? menu;
+        public CatchVM catchVM;
+        public LibVLC _libVLC;
+        public LibVLCSharp.Shared.MediaPlayer _mediaPlayer;
+        public Media? _currentCry;
+        public DAL.DAL dAL = new DAL.DAL();
+        public ItemInventory inventory;
+        public MainMenu? menu;
 
         public CatchView()
         {
@@ -54,10 +54,7 @@ namespace PokeApp.Views
 
         public async void GeneratePokemon()
         {
-            catchVM.StartEncounter();
-
             _currentCry?.Dispose();
-
             string cryPath = await CryManager.GetCachedCryAsync(
                 catchVM.CurrentPokemon!.Cry,
                 catchVM.CurrentPokemon.Name);
@@ -72,7 +69,8 @@ namespace PokeApp.Views
                 _mediaPlayer.Play(_currentCry);
 
                 Sprite.Source = new BitmapImage(new Uri(catchVM.CurrentPokemon.Sprite, UriKind.Absolute));
-                PokemonName.Content = catchVM.CurrentPokemon.Name;
+                PokemonName.Content = catchVM.CurrentPokemon.Name.ToUpper();
+                PokemonLevel.Content = new Random().Next(100);
             }
             catch (Exception ex)
             {

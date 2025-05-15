@@ -14,16 +14,31 @@
     </Window.Resources>
 
     <Grid>
-        <local:CatchView x:Name="CatchUserControl" Visibility="Hidden"></local:CatchView>
-        <local:ShopView x:Name="ShopUserControl" Visibility="Hidden"></local:ShopView>
-        <local:BoxView x:Name="BoxUserControl" Visibility="Hidden"></local:BoxView>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.175*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="PokemonName" Foreground="White" Panel.ZIndex="2" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="35"></Label>
+        <local:CatchView x:Name="CatchUserControl" Visibility="Hidden" Grid.ColumnSpan="3" Grid.RowSpan="3"></local:CatchView>
+        <local:ShopView x:Name="ShopUserControl" Visibility="Hidden" Grid.ColumnSpan="3" Grid.RowSpan="3"></local:ShopView>
+        <local:BoxView x:Name="BoxUserControl" Visibility="Hidden" Grid.ColumnSpan="3" Grid.RowSpan="3"></local:BoxView>
         <MediaElement Name="BattleVideo"
                       Source="Views/Media/Video/battle.mp4"
                       LoadedBehavior="Manual"
                       UnloadedBehavior="Stop"
                       Stretch="Fill"
                       MediaEnded="BattleVideo_MediaEnded"
-                      IsMuted="True"/>
+                      IsMuted="True"
+                      Grid.ColumnSpan="3"
+                      Grid.RowSpan="3"/>
 
         <MediaElement Name="BattleAudio"
                       Source="Views/Media/Audio/battle.mp3"
@@ -39,7 +54,9 @@
                       UnloadedBehavior="Stop"
                       Stretch="Fill"
                       MediaEnded="Title_MediaEnded"
-                      IsMuted="True"/>
+                      IsMuted="True"
+                      Grid.ColumnSpan="3"
+                      Grid.RowSpan="3"/>
 
         <MediaElement Name="BackgroundVideo"
                       Source="Views/Media/Video/mainvideo.mp4"
@@ -47,7 +64,9 @@
                       UnloadedBehavior="Stop"
                       Stretch="Fill"
                       MediaEnded="BackgroundVideo_MediaEnded"
-                      IsMuted="True"/>
+                      IsMuted="True"
+                      Grid.ColumnSpan="3"
+                      Grid.RowSpan="3"/>
 
         <MediaElement Name="BackgroundAudio"
                   Source="Views/Media/Audio/mainaudio.mp3"
@@ -71,9 +90,11 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Opacity="0.01"
-            Click="Button_Click"/>
+            Click="Button_Click"
+            Grid.ColumnSpan="3"
+            Grid.RowSpan="3"/>
 
-        <Grid>
+        <Grid Grid.RowSpan="3" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.5*"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>

@@ -19,24 +19,27 @@
 
     <Grid Background="{StaticResource BattleImage}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="126*"></ColumnDefinition>
-            <ColumnDefinition Width="121*"></ColumnDefinition>
-            <ColumnDefinition Width="217*"></ColumnDefinition>
-            <ColumnDefinition Width="193*"/>
-            <ColumnDefinition Width="139*"></ColumnDefinition>
-            <ColumnDefinition Width="4*"></ColumnDefinition>
+            <ColumnDefinition Width="93*"></ColumnDefinition>
+            <ColumnDefinition Width="154*"></ColumnDefinition>
+            <ColumnDefinition Width="45*"></ColumnDefinition>
+            <ColumnDefinition Width="29*"></ColumnDefinition>
+            <ColumnDefinition Width="187*"/>
+            <ColumnDefinition Width="186*"/>
+            <ColumnDefinition Width="103*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="57*"></RowDefinition>
-            <RowDefinition Height="32*"></RowDefinition>
-            <RowDefinition Height="111*"></RowDefinition>
+            <RowDefinition Height="64*"></RowDefinition>
+            <RowDefinition Height="26*"></RowDefinition>
+            <RowDefinition Height="110*"></RowDefinition>
             <RowDefinition Height="107*"></RowDefinition>
             <RowDefinition Height="143*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label Foreground="#46413A" x:Name="PokemonName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="25" FontFamily="{StaticResource PixelFont}"></Label>
-        <Image x:Name="Sprite" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2"></Image>
+        <Label Foreground="#46413A" x:Name="PokemonName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="30" FontFamily="{StaticResource PixelFont}"></Label>
+        <Image x:Name="Sprite" Grid.Column="5" Grid.Row="1" Grid.RowSpan="2"></Image>
+        <Label Foreground="#46413A" x:Name="PokemonLevel" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="30" FontFamily="{StaticResource PixelFont}"></Label>
 
         <Grid x:Name="ItemGrid" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
@@ -46,16 +49,16 @@
             <Image Grid.Row="0" Grid.RowSpan="2" x:Name="ItemBag" Visibility="Hidden" Source="Media/Images/itembag.png" Stretch="UniformToFill"/>
             <Grid Grid.Row="1" x:Name="Items"/>
         </Grid>
-        <Button Panel.ZIndex="2" x:Name="Button1" Visibility="Visible" Background="Transparent" Grid.Column="2" Grid.Row="4" Margin="10,10,10,10"
+        <Button Panel.ZIndex="2" x:Name="Button1" Visibility="Visible" Background="Transparent" Grid.Column="4" Grid.Row="4"
             BorderThickness="0"
             Opacity="0.01" Click="Item_Click"/>
-        <Image Source="Media/Images/button.png" Grid.Row="4" Grid.Column="2" Margin="10,10,10,10"/>
-        <Label Grid.Row="4" Grid.Column="2" Content="Items" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="30"/>
+        <Image Source="Media/Images/button.png" Grid.Row="4" Grid.Column="4"/>
+        <Label Grid.Row="4" Grid.Column="4" Content="Items" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="30" Height="49" Width="117"/>
 
-        <Button Panel.ZIndex="2" x:Name="Button2" Visibility="Visible" Background="Transparent" Grid.Column="3" Grid.Row="4" Margin="10,10,10,10"
+        <Button Panel.ZIndex="2" x:Name="Button2" Visibility="Visible" Background="Transparent" Grid.Column="5" Grid.Row="4"
             BorderThickness="0"
             Opacity="0.01" Click="Flee_Click"/>
-        <Image Source="Media/Images/button.png" Grid.Row="4" Grid.Column="3" Margin="10,10,10,10"/>
-        <Label Grid.Row="4" Grid.Column="3" Content="Flee" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="30"/>
+        <Image Source="Media/Images/button.png" Grid.Row="4" Grid.Column="5"/>
+        <Label Grid.Row="4" Grid.Column="5" Content="Flee" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource PixelFont}" FontSize="30" Height="49" Width="92"/>
     </Grid>
 </UserControl>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PokeApp.Models;
+using PokeApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -83,7 +85,7 @@ namespace PokeApp.Views
             TitleVideo.Play();
         }
 
-        private void Catch_Click(object sender, RoutedEventArgs e)
+        private async void Catch_Click(object sender, RoutedEventArgs e)
         {
             BattleVideo.Visibility = Visibility.Visible;
             CatchUserControl.Construct(this);
@@ -105,6 +107,11 @@ namespace PokeApp.Views
             Button4.Visibility = Visibility.Hidden;
             BattleVideo.Play();
             BattleAudio.Play();
+            CatchUserControl.catchVM.StartEncounter();
+            await Task.Delay(4275);
+            PokemonName.Content = CatchUserControl.catchVM.CurrentPokemon!.Name.ToUpper();
+            await Task.Delay(800);
+            PokemonName.Content = "";
         }
 
         public void CatchOver()

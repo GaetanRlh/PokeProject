@@ -4,8 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PokeApp.Views"
-             xmlns:viewmodel="clr-namespace:PokeApp.ViewModels" 
-             d:DataContext="{d:DesignInstance Type=viewmodel:ShopVM}"
              mc:Ignorable="d" 
              d:DesignHeight="750" d:DesignWidth="1100">
 
@@ -17,12 +15,26 @@
 
         <Canvas Name="AnimationCanvas">
             <Image Name="CharacterSprite"
-           Width="100" Height="100"
-           Canvas.Left="350" Canvas.Top="690"/>
+           Width="150" Height="150"
+           Canvas.Left="450" Canvas.Top="690"/>
         </Canvas>
 
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="350">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="43*"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="53*"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="1" Grid.Column="1" Source="Media/Images/cashier.png"/>
+        </Grid>
+
         <Grid Name="ShopPanel" Visibility="Collapsed">
-            <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Width="250" Height="300" Margin="0,20,50,0">
+            <Grid HorizontalAlignment="Right" VerticalAlignment="Center" Width="450" Height="400">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.5*"></RowDefinition>
                     <RowDefinition></RowDefinition>
@@ -30,7 +42,7 @@
                 <Grid Grid.Row="1" x:Name="UI"></Grid>
                 <Image Source="Media/Images/ShopUI.png"
                Stretch="Fill"
-               Width="250" Height="300"
+               Width="450" Height="400"
                Grid.Row="0" Grid.RowSpan="2"
                Panel.ZIndex="-1"/>
             </Grid>

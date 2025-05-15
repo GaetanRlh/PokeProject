@@ -66,7 +66,7 @@ namespace PokeApp.ViewModels
             Random rand = new();
             return pokeBallName switch
             {
-                "Pokeball" => rand.NextDouble() < 0.25,
+                "Pokéball" => rand.NextDouble() < 0.25,
                 "Greatball" => rand.NextDouble() < 0.5,
                 "Masterball" => true,
                 _ => false
