@@ -41,7 +41,7 @@
         <Image x:Name="Sprite" Grid.Column="5" Grid.Row="1" Grid.RowSpan="2"></Image>
         <Label Foreground="#46413A" x:Name="PokemonLevel" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="30" FontFamily="{StaticResource PixelFont}"></Label>
 
-        <Grid x:Name="ItemGrid" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+        <Grid x:Name="ItemGrid" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.5*"></RowDefinition>
                 <RowDefinition></RowDefinition>
