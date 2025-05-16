@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="14.60" multi-file="no" uid="simp0c828e91600f4e15950ee27e124dfa80" creation-date="05/14/2025 19:31:07">
+  <meta>
+    <name />
+    <authors>Jacob St-Hilaire</authors>
+    <description />
+  </meta>
+  <counters models="2">
+    <entity-names>
+      <counter>
+        <item-type type-id="erd-entity" type="Entity" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>4</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="erd-entity" type="Entity" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="property" type="Property" />
+        <value>33</value>
+      </counter>
+      <counter>
+        <item-type type-id="relationship" type="Association" />
+        <value>3</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.Other.EntityRelationshipDiagram</type>
+        <value>2</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
+        <value>3</value>
+      </counter>
+    </diagrams>
+    <fields>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Erd.ErdEntityAttribute</type>
+        <value>2</value>
+      </counter>
+    </fields>
+  </counters>
+  <alias-groups />
+  <management uid="md-751579df690c4169b7b7e52b7b7a9826" name="" task-id-sequence="0">
+    <working-schedule uid="ws-69e1f87b46114ddb98cb48694d7608c3" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+    <persons>
+      <person id="">
+        <first-name>Kazuo</first-name>
+        <last-name>Utsu</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-d0486851259f4221a6bdea51c3d39c60" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Jacob</first-name>
+        <last-name>St-Hilaire</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-14b2fd4e7b9c46a49f1ce760b72c1ee1" name="" order-index="-1" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <parameters />
+      <types>
+        <type id="INT (PK)" name="INT (PK)" />
+        <type id="Class:5732133414114008ac906c7587e6fcd5" name="Items" class-ref="5732133414114008ac906c7587e6fcd5" />
+        <type id="Class:5268a749c83b4d62b7b21572d22e6e60" name="Pokemon Inventory " class-ref="5268a749c83b4d62b7b21572d22e6e60" />
+        <type id="Class:93c9e00858cf4075a50cf0947b4045b8" name="tbl Items" class-ref="93c9e00858cf4075a50cf0947b4045b8" />
+        <type id="Class:27803031944e48a892906b353943a4ac" name="Pokemons" class-ref="27803031944e48a892906b353943a4ac" />
+        <type id="Int" name="Int" />
+        <type id="VARCHAR(25) NOT NULL" name="VARCHAR(25) NOT NULL" />
+        <type id="Class:7555a1579b9044c7be5b6f63ca9957a7" name=" tbl Pokemon Inventory " class-ref="7555a1579b9044c7be5b6f63ca9957a7" />
+        <type id="DECIMAL" name="DECIMAL" />
+        <type id="VARCHAR(150)" name="VARCHAR(150)" />
+        <type id="Class:ee341e844a0a4d609b0ef46bb90e4f20" name="Items Inventory" class-ref="ee341e844a0a4d609b0ef46bb90e4f20" />
+        <type id="DECIMAL NOT NULL DEFAULT" name="DECIMAL NOT NULL DEFAULT" />
+        <type id="VARCHAR(25) NOT NULL DEFAULT" name="VARCHAR(25) NOT NULL DEFAULT" />
+        <type id="Class:d61cf2136af94e42a7c524a0a973a3f5" name="tbl Items Inventory" class-ref="d61cf2136af94e42a7c524a0a973a3f5" />
+        <type id="INT (FK)" name="INT (FK)" />
+        <type id="VARCHAR(150) NOT NULL" name="VARCHAR(150) NOT NULL" />
+        <type id="VARCHAR(25)" name="VARCHAR(25)" />
+        <type id="Class:c3321cc4d14c4812bbcec800bf44b9d8" name="tbl Pokemons" class-ref="c3321cc4d14c4812bbcec800bf44b9d8" />
+      </types>
+    </custom-types>
+  </types>
+  <items>
+    <item id="7555a1579b9044c7be5b6f63ca9957a7" cid="C001" type="class" name=" tbl Pokemon Inventory " creation-date="05/14/2025 19:47:10" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="1e0902f091154cafb2dfa17626c32515" cid="PROP017" veid="aaf4f905ff8114518a5b142c25b4e906b235" name="Id" creation-date="05/14/2025 19:47:25" property-ref="f9071c26abfa4ffd92b0750273d0ae7c" />
+        <attribute id="63dfabf75cdf49a6ae3b9c76644b0390" cid="PROP018" veid="a1a4224810fe942deaf2d3978ac51c080610" name="PokemonId" creation-date="05/14/2025 19:47:36" property-ref="9262cfe8cf3f4f879879b80e86ec3c5c" />
+      </attributes>
+    </item>
+    <item id="93c9e00858cf4075a50cf0947b4045b8" cid="C004" type="class" name="tbl Items" creation-date="05/14/2025 19:57:58" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="96d2aa53cf0c4576b0322dee6b4e094a" cid="PROP027" veid="a7d11d55aab6546b0a86bb0d183a68e71205" name="Item" creation-date="05/14/2025 19:58:04" property-ref="8ac4de22c3524536998da667375d369c" />
+        <attribute id="f1ecfe122b5148c5a51441868bb7a791" cid="PROP028" veid="a81dd73e4456946e885c5efc19088b7ff711" name="ItemName" creation-date="05/14/2025 19:58:13" property-ref="d1767accc4794c2bbcc3d4d364fb8b1c" />
+        <attribute id="06a8d426838c4f42bb6bff1de684539c" cid="PROP029" veid="a34f48de13cfc4331aed6960dfe2962f5185" name="ItemSprite" creation-date="05/14/2025 19:58:32" property-ref="f09c82992b004a95ae7da4827eafdae8" />
+        <attribute id="cb256c0896894012845965cd101cd0d1" cid="PROP030" veid="a9db132aaa00f49a58ec626aaf97c05b7818" name="ItemPrice" creation-date="05/14/2025 19:58:42" property-ref="56335d2ad0384183b066edc87a17d93f" />
+      </attributes>
+    </item>
+    <item id="144043b701814f4797d13ff916308c3b" cid="PROP007" type="property" owner="b206b973880442809c0df658bc2c0b70" creator="" creation-date="05/14/2025 19:51:40" visibility="private">
+      <structural-feature multiplicity="*" type="Pokemon Inventory " type-id="Class:5268a749c83b4d62b7b21572d22e6e60" />
+    </item>
+    <item id="29cd2b06c3534feb8d66409e1a21c005" cid="PROP016" type="property" owner="f60e01eada904e79984a144df3fea8f4" creator="" creation-date="05/14/2025 19:58:58" visibility="private">
+      <structural-feature multiplicity="*" type="Items" type-id="Class:5732133414114008ac906c7587e6fcd5" />
+    </item>
+    <item id="d3c63f6c126f42efb28b100919f631e0" cid="PROP008" type="property" owner="b206b973880442809c0df658bc2c0b70" creator="" creation-date="05/14/2025 19:51:40" visibility="private">
+      <structural-feature multiplicity="*" type="Pokemons" type-id="Class:27803031944e48a892906b353943a4ac" />
+    </item>
+    <item id="f9909685e2c0446cb10cb3b38d16174b" cid="REL001" type="relationship" name="Possede" creation-date="05/14/2025 19:51:40" from="7555a1579b9044c7be5b6f63ca9957a7" to="c3321cc4d14c4812bbcec800bf44b9d8" visibility="package">
+      <owned-items />
+      <relation from="7555a1579b9044c7be5b6f63ca9957a7" to="c3321cc4d14c4812bbcec800bf44b9d8" derived="false">
+        <start-role id="umlar-ec82ddfc-5aed-481b-8f00-9dee715e8bc7" name="" navigability="" association-type="association" visibility="private" property-ref="e3f5b527f74d42e6afbbdee7a66a6ea7" />
+        <end-role id="umlar-6ee332e3-fdcf-409a-881e-6275b966a4df" name="" navigability="" association-type="association" visibility="private" property-ref="5c845cdcaf944bc6845847c3fa6c3855" />
+      </relation>
+    </item>
+    <item id="d61cf2136af94e42a7c524a0a973a3f5" cid="C003" type="class" name="tbl Items Inventory" creation-date="05/14/2025 19:52:11" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="f552265a5acb4e0682115c6cf666a88f" cid="PROP025" veid="a751d00f4048048968e3793dc2d64a2ad65" name="Id" creation-date="05/14/2025 19:56:54" property-ref="415b4b2bb10346569c2c5a41853c7053" />
+        <attribute id="8e6a8313fed64d7ab57769c46d01988e" cid="PROP026" veid="a66adcc069bc941c889f079ad9d099c9d727" name="ItemId" creation-date="05/14/2025 19:57:08" property-ref="8427507e21c1493497ec2d6238bd1074" />
+      </attributes>
+    </item>
+    <item id="e8a71f78d2b3475c89afedfe7728b618" cid="REL002" type="relationship" name="Contient" creation-date="05/14/2025 19:58:58" from="d61cf2136af94e42a7c524a0a973a3f5" to="93c9e00858cf4075a50cf0947b4045b8" visibility="package">
+      <owned-items />
+      <relation from="d61cf2136af94e42a7c524a0a973a3f5" to="93c9e00858cf4075a50cf0947b4045b8" derived="false">
+        <start-role id="umlar-d009ab92-d71b-4931-bf6e-12bdf83c8257" name="" navigability="" association-type="association" visibility="private" attribute-ref="a66adcc069bc941c889f079ad9d099c9d727" property-ref="f2e1bca11fb74901bf93d7c9a0ff3afd" />
+        <end-role id="umlar-67123d95-209e-487e-b548-1a86da817646" name="" navigability="" association-type="association" visibility="private" property-ref="83dc6e31fde54bd399f342d59dcdc0a5" />
+      </relation>
+    </item>
+    <item id="c3321cc4d14c4812bbcec800bf44b9d8" cid="C002" type="class" name="tbl Pokemons" creation-date="05/14/2025 19:48:57" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="2054942c6bf04b66acf25044b9a50925" cid="PROP019" veid="a71fde5fa1194493ba955caecf82658c2483" name="PokemonId" creation-date="05/14/2025 19:49:10" property-ref="3e793725a32c4887849013e65ac702a5" />
+        <attribute id="98ff9a843b0e4d58873edffbb21363df" cid="PROP020" veid="a774a002d8d8e4a3898b0836a689be076739" name="PokemonSound" creation-date="05/14/2025 19:49:37" property-ref="b1a8fbec3ac14aff9486116d24dd8ce8" />
+        <attribute id="d9f8f5015bb54997a94d99163ebc3e25" cid="PROP021" veid="a7c666623a0104492bb49c3003ce3d351563" name="PokemonSpriteFront" creation-date="05/14/2025 19:50:39" property-ref="acfbafb380ae41beb1c0c29be1a67d06" />
+        <attribute id="28cf5a6e0d3a4e1fa215683ea777a46e" cid="PROP022" veid="a35a9be72096c4a53a6642788847bd2b8838" name="PokemonName" creation-date="05/14/2025 19:50:56" property-ref="c2442218316e41818de7bacf0cc020f0" />
+      </attributes>
+    </item>
+    <item id="b2993f289f5e492985e96dc246208faa" cid="PROP015" type="property" owner="f60e01eada904e79984a144df3fea8f4" creator="" creation-date="05/14/2025 19:58:58" visibility="private">
+      <structural-feature multiplicity="*" type="Items Inventory" type-id="Class:ee341e844a0a4d609b0ef46bb90e4f20" />
+    </item>
+  </items>
+  <models>
+    <model id="pf9521216b7994bef9b922df270330b3e_212941095" name="Model1" namespace="" order-index="1" expanded="true">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>05/14/2025 19:43:40</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models>
+        <model id="p114cf3d93fab4054a9ed73caae3ae1c0_858260787" name="Model2" namespace="" order-index="5">
+          <meta>
+            <authors>
+              <author> </author>
+            </authors>
+            <description />
+            <creation-date>05/14/2025 20:07:30</creation-date>
+            <change-date>01/01/0001 00:00:00</change-date>
+            <revision-count>0</revision-count>
+            <version />
+          </meta>
+          <abstract-items />
+          <sub-models />
+        </model>
+      </sub-models>
+      <diagram type="uml-class" id="p75ab02fe38994c0d894a046b3d7f2e12_820442342" name="ClassDiagram1" order-index="2" overview-order-index="0" uid="" name-style="" auto-routed-paths="false" default-line-style="default">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>05/14/2025 19:47:07</creation-date>
+          <change-date>05/14/2025 19:58:58</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="5732133414114008ac906c7587e6fcd5" cid="C004" type="class" name="Items" creator="" creation-date="05/14/2025 19:57:58" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a7d11d55aab6546b0a86bb0d183a68e71205" cid="PROP011" name="ItemId" creation-date="05/14/2025 19:58:04" property-ref="ea35397f19964eb09680860fa8309c82" />
+              <attribute id="a81dd73e4456946e885c5efc19088b7ff711" cid="PROP012" name="Name" creation-date="05/14/2025 19:58:13" property-ref="aa180d33dc5943db90b7a3f74e10de1d" />
+              <attribute id="a34f48de13cfc4331aed6960dfe2962f5185" cid="PROP013" name="Sprite" creation-date="05/14/2025 19:58:32" property-ref="d897b9de9f9b4655abbf6336c3455433" />
+              <attribute id="a9db132aaa00f49a58ec626aaf97c05b7818" cid="PROP014" name="Price" creation-date="05/14/2025 19:58:42" property-ref="ec16fd91cb9e4f4180b9739296eb3f24" />
+            </attributes>
+          </item>
+          <item id="ee5d48283c8a4d71ba65b91de36769c0" cid="PROP005" type="property" name="Sprite" owner="27803031944e48a892906b353943a4ac" creator="" creation-date="05/14/2025 19:50:39" visibility="private">
+            <structural-feature type="VARCHAR(150)" type-id="VARCHAR(150)" />
+          </item>
+          <item id="aa180d33dc5943db90b7a3f74e10de1d" cid="PROP012" type="property" name="Name" owner="5732133414114008ac906c7587e6fcd5" creator="" creation-date="05/14/2025 19:58:13" visibility="private">
+            <structural-feature type="VARCHAR(25)" type-id="VARCHAR(25)" />
+          </item>
+          <item id="bf9684d8af90440cb040d0bbfaa49447" cid="PROP004" type="property" name="Sound" owner="27803031944e48a892906b353943a4ac" creator="" creation-date="05/14/2025 19:49:37" visibility="private">
+            <structural-feature type="VARCHAR(150)" type-id="VARCHAR(150)" />
+          </item>
+          <item id="4b7122902f7545568e1c429563d6d824" cid="PROP006" type="property" name="Name" owner="27803031944e48a892906b353943a4ac" creator="" creation-date="05/14/2025 19:50:56" visibility="private">
+            <structural-feature type="VARCHAR(25)" type-id="VARCHAR(25)" />
+          </item>
+          <item id="94220f4deb4f4f4d82bda53eb8200eca" cid="PROP010" type="property" name="ItemId" owner="ee341e844a0a4d609b0ef46bb90e4f20" creator="" creation-date="05/14/2025 19:57:08" visibility="private">
+            <structural-feature type="Items" type-id="Class:5732133414114008ac906c7587e6fcd5" />
+          </item>
+          <item id="8695c6480f614b678b9ed2b1ec719a28" cid="PROP009" type="property" name="Id" owner="ee341e844a0a4d609b0ef46bb90e4f20" creator="" creation-date="05/14/2025 19:56:54" visibility="private">
+            <structural-feature type="INT (PK)" type-id="INT (PK)" />
+          </item>
+          <item id="b206b973880442809c0df658bc2c0b70" cid="REL001" type="relationship" creator="" creation-date="05/14/2025 19:51:40" from="5268a749c83b4d62b7b21572d22e6e60" to="27803031944e48a892906b353943a4ac" visibility="package">
+            <owned-items />
+            <relation from="5268a749c83b4d62b7b21572d22e6e60" to="27803031944e48a892906b353943a4ac" derived="false">
+              <start-role id="umlar-c637a0b1-ef3c-402f-8b12-fba7cedf5662" name="" navigability="" association-type="association" visibility="private" property-ref="144043b701814f4797d13ff916308c3b" />
+              <end-role id="umlar-bffdc741-9f98-45f9-a36d-91e02be83344" name="" navigability="" association-type="association" visibility="private" property-ref="d3c63f6c126f42efb28b100919f631e0" />
+            </relation>
+          </item>
+          <item id="ca4e47d3e34944c3b4bf93ef31382bc1" cid="PROP003" type="property" name="PokemonId" owner="27803031944e48a892906b353943a4ac" creator="" creation-date="05/14/2025 19:49:10" visibility="private">
+            <structural-feature type="INT (PK)" type-id="INT (PK)" />
+          </item>
+          <item id="5268a749c83b4d62b7b21572d22e6e60" cid="C001" type="class" name="Pokemon Inventory " creator="" creation-date="05/14/2025 19:47:10" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="aaf4f905ff8114518a5b142c25b4e906b235" cid="PROP001" name="Id" creation-date="05/14/2025 19:47:25" property-ref="663967ec2a464d24b9f5a3159d74b1e7" />
+              <attribute id="a1a4224810fe942deaf2d3978ac51c080610" cid="PROP002" name="PokemonId" creation-date="05/14/2025 19:47:36" property-ref="1cc03d1ab4cc4f67a1c80e251e50cb2d" />
+            </attributes>
+          </item>
+          <item id="1cc03d1ab4cc4f67a1c80e251e50cb2d" cid="PROP002" type="property" name="PokemonId" owner="5268a749c83b4d62b7b21572d22e6e60" creator="" creation-date="05/14/2025 19:47:36" visibility="private">
+            <structural-feature type="INT (FK)" type-id="INT (FK)" />
+          </item>
+          <item id="663967ec2a464d24b9f5a3159d74b1e7" cid="PROP001" type="property" name="Id" owner="5268a749c83b4d62b7b21572d22e6e60" creator="" creation-date="05/14/2025 19:47:25" visibility="private">
+            <structural-feature type="INT (PK)" type-id="INT (PK)" />
+          </item>
+          <item id="f60e01eada904e79984a144df3fea8f4" cid="REL002" type="relationship" creator="" creation-date="05/14/2025 19:58:58" from="ee341e844a0a4d609b0ef46bb90e4f20" to="5732133414114008ac906c7587e6fcd5" visibility="package">
+            <owned-items />
+            <relation from="ee341e844a0a4d609b0ef46bb90e4f20" to="5732133414114008ac906c7587e6fcd5" derived="false">
+              <start-role id="umlar-27c8db2c-d0c1-4622-9b6d-c39531a133ce" name="" navigability="" association-type="association" visibility="private" attribute-ref="a66adcc069bc941c889f079ad9d099c9d727" property-ref="b2993f289f5e492985e96dc246208faa" />
+              <end-role id="umlar-ab1665a5-d469-470d-89c5-f77352c6e388" name="" navigability="" association-type="association" visibility="private" property-ref="29cd2b06c3534feb8d66409e1a21c005" />
+            </relation>
+          </item>
+          <item id="27803031944e48a892906b353943a4ac" cid="C002" type="class" name="Pokemons" creator="" creation-date="05/14/2025 19:48:57" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a71fde5fa1194493ba955caecf82658c2483" cid="PROP003" name="PokemonId" creation-date="05/14/2025 19:49:10" property-ref="ca4e47d3e34944c3b4bf93ef31382bc1" />
+              <attribute id="a774a002d8d8e4a3898b0836a689be076739" cid="PROP004" name="Sound" creation-date="05/14/2025 19:49:37" property-ref="bf9684d8af90440cb040d0bbfaa49447" />
+              <attribute id="a7c666623a0104492bb49c3003ce3d351563" cid="PROP005" name="Sprite" creation-date="05/14/2025 19:50:39" property-ref="ee5d48283c8a4d71ba65b91de36769c0" />
+              <attribute id="a35a9be72096c4a53a6642788847bd2b8838" cid="PROP006" name="Name" creation-date="05/14/2025 19:50:56" property-ref="4b7122902f7545568e1c429563d6d824" />
+            </attributes>
+          </item>
+          <item id="d897b9de9f9b4655abbf6336c3455433" cid="PROP013" type="property" name="Sprite" owner="5732133414114008ac906c7587e6fcd5" creator="" creation-date="05/14/2025 19:58:32" visibility="private">
+            <structural-feature type="VARCHAR(150)" type-id="VARCHAR(150)" />
+          </item>
+          <item id="ea35397f19964eb09680860fa8309c82" cid="PROP011" type="property" name="ItemId" owner="5732133414114008ac906c7587e6fcd5" creator="" creation-date="05/14/2025 19:58:04" visibility="private">
+            <structural-feature type="INT (FK)" type-id="INT (FK)" />
+          </item>
+          <item id="ee341e844a0a4d609b0ef46bb90e4f20" cid="C003" type="class" name="Items Inventory" creator="" creation-date="05/14/2025 19:52:11" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a751d00f4048048968e3793dc2d64a2ad65" cid="PROP009" name="Id" creation-date="05/14/2025 19:56:54" property-ref="8695c6480f614b678b9ed2b1ec719a28" />
+              <attribute id="a66adcc069bc941c889f079ad9d099c9d727" cid="PROP010" name="ItemId" creation-date="05/14/2025 19:57:08" property-ref="94220f4deb4f4f4d82bda53eb8200eca" />
+            </attributes>
+          </item>
+          <item id="ec16fd91cb9e4f4180b9739296eb3f24" cid="PROP014" type="property" name="Price" owner="5732133414114008ac906c7587e6fcd5" creator="" creation-date="05/14/2025 19:58:42" visibility="private">
+            <structural-feature type="DECIMAL" type-id="DECIMAL" />
+          </item>
+        </abstract-items>
+        <layer id="ccb4b736258349589f334161baaf6d34" name="Default" visible="true" enabled="true" locked="false">
+          <item id="5268a749c83b4d62b7b21572d22e6e60" iid="ea1f27614b6d46a9819777ebc6cc6ce1" show-fields="true" creation-date="05/14/2025 19:47:10" order-index="0" type="entity">
+            <layout ax="284" ay="265" awidth="140" aheight="91" x="284" y="265" width="140" height="91" />
+            <classifier />
+            <class />
+          </item>
+          <item id="27803031944e48a892906b353943a4ac" iid="db501847b09b468a967443f0b1da6053" show-fields="true" creation-date="05/14/2025 19:48:57" order-index="1" type="entity">
+            <layout ax="236" ay="455" awidth="236" aheight="115" x="236" y="455" width="140" height="113" />
+            <classifier />
+            <class />
+          </item>
+          <item id="b206b973880442809c0df658bc2c0b70" iid="710ee7b67bbd4f1e95dfa8002f6899e6" creation-date="05/14/2025 19:51:40" order-index="2" type="relation">
+            <layout start-role-position="47,-49" start-role-width="46" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="354" y1="356" x2="354" y2="455" start-border-pos="0.625" end-border-pos="0.125" start-local-pos="70" end-local-pos="118" name-position="45,-4">
+              <points>
+                <point x="354" y="356" />
+                <point x="354" y="455" />
+              </points>
+            </layout>
+            <relation from="5268a749c83b4d62b7b21572d22e6e60" from-iid="ea1f27614b6d46a9819777ebc6cc6ce1" to="27803031944e48a892906b353943a4ac" to-iid="db501847b09b468a967443f0b1da6053" />
+          </item>
+          <item id="ee341e844a0a4d609b0ef46bb90e4f20" iid="4a1432acecc943ad9c080f877c675ec5" show-fields="true" creation-date="05/14/2025 19:52:11" order-index="3" type="entity">
+            <layout ax="643" ay="276.5" awidth="140" aheight="77" x="643" y="276.5" width="140" height="68" />
+            <classifier />
+            <class />
+          </item>
+          <item id="5732133414114008ac906c7587e6fcd5" iid="5b998f80a12d4f6c9bf88221c7864965" show-fields="true" creation-date="05/14/2025 19:57:58" order-index="4" type="entity">
+            <layout ax="643" ay="455" awidth="140" aheight="160" x="646" y="462" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="f60e01eada904e79984a144df3fea8f4" iid="2b2eec049a9b4b889650dd426855adce" creation-date="05/14/2025 19:58:58" order-index="5" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" start-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="true" auto-path="" x1="713" y1="354" x2="713" y2="455" start-border-pos="0.625" end-border-pos="0.125" start-local-pos="70" end-local-pos="70" name-position="39,-1">
+              <points>
+                <point x="713" y="354" />
+                <point x="713" y="455" />
+              </points>
+            </layout>
+            <relation from="ee341e844a0a4d609b0ef46bb90e4f20" from-iid="4a1432acecc943ad9c080f877c675ec5" to="5732133414114008ac906c7587e6fcd5" to-iid="5b998f80a12d4f6c9bf88221c7864965" />
+          </item>
+        </layer>
+      </diagram>
+      <diagram type="uml-class" id="p9164c64647334b6e912627d4efcf99eb_133251665" name="ClassDiagram2" order-index="3" overview-order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>05/14/2025 20:00:11</creation-date>
+          <change-date>05/14/2025 20:15:54</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="b1a8fbec3ac14aff9486116d24dd8ce8" veid="bf9684d8af90440cb040d0bbfaa49447" cid="PROP020" type="property" name="PokemonSound" owner="c3321cc4d14c4812bbcec800bf44b9d8" creator="" creation-date="05/14/2025 19:49:37" visibility="private">
+            <structural-feature type="VARCHAR(150) NOT NULL" type-id="VARCHAR(150) NOT NULL" />
+          </item>
+          <item id="9262cfe8cf3f4f879879b80e86ec3c5c" veid="1cc03d1ab4cc4f67a1c80e251e50cb2d" cid="PROP018" type="property" name="PokemonId" owner="7555a1579b9044c7be5b6f63ca9957a7" creator="" creation-date="05/14/2025 19:47:36" visibility="private">
+            <structural-feature type="INT (FK)" type-id="INT (FK)" />
+          </item>
+          <item id="f09c82992b004a95ae7da4827eafdae8" veid="d897b9de9f9b4655abbf6336c3455433" cid="PROP029" type="property" name="ItemSprite" owner="93c9e00858cf4075a50cf0947b4045b8" creator="" creation-date="05/14/2025 19:58:32" visibility="private">
+            <structural-feature type="VARCHAR(150) NOT NULL" type-id="VARCHAR(150) NOT NULL" />
+          </item>
+          <item id="8427507e21c1493497ec2d6238bd1074" veid="94220f4deb4f4f4d82bda53eb8200eca" cid="PROP026" type="property" name="ItemId" owner="d61cf2136af94e42a7c524a0a973a3f5" creator="" creation-date="05/14/2025 19:57:08" visibility="private">
+            <structural-feature type="Items" type-id="Class:5732133414114008ac906c7587e6fcd5" />
+          </item>
+          <item id="83dc6e31fde54bd399f342d59dcdc0a5" veid="29cd2b06c3534feb8d66409e1a21c005" cid="PROP032" type="property" owner="e8a71f78d2b3475c89afedfe7728b618" creator="" creation-date="05/14/2025 19:58:58" visibility="private">
+            <structural-feature multiplicity="1..*" type="tbl Items" type-id="Class:93c9e00858cf4075a50cf0947b4045b8" />
+          </item>
+          <item id="5c845cdcaf944bc6845847c3fa6c3855" veid="d3c63f6c126f42efb28b100919f631e0" cid="PROP024" type="property" owner="f9909685e2c0446cb10cb3b38d16174b" creator="" creation-date="05/14/2025 19:51:40" visibility="private">
+            <structural-feature multiplicity="1..*" type="tbl Pokemons" type-id="Class:c3321cc4d14c4812bbcec800bf44b9d8" />
+          </item>
+          <item id="f9071c26abfa4ffd92b0750273d0ae7c" veid="663967ec2a464d24b9f5a3159d74b1e7" cid="PROP017" type="property" name="Id" owner="7555a1579b9044c7be5b6f63ca9957a7" creator="" creation-date="05/14/2025 19:47:25" visibility="private">
+            <structural-feature type="INT (PK)" type-id="INT (PK)" />
+          </item>
+          <item id="415b4b2bb10346569c2c5a41853c7053" veid="8695c6480f614b678b9ed2b1ec719a28" cid="PROP025" type="property" name="Id" owner="d61cf2136af94e42a7c524a0a973a3f5" creator="" creation-date="05/14/2025 19:56:54" visibility="private">
+            <structural-feature type="INT (PK)" type-id="INT (PK)" />
+          </item>
+          <item id="e3f5b527f74d42e6afbbdee7a66a6ea7" veid="144043b701814f4797d13ff916308c3b" cid="PROP023" type="property" owner="f9909685e2c0446cb10cb3b38d16174b" creator="" creation-date="05/14/2025 19:51:40" visibility="private">
+            <structural-feature multiplicity="0..*" type=" tbl Pokemon Inventory " type-id="Class:7555a1579b9044c7be5b6f63ca9957a7" />
+          </item>
+          <item id="d1767accc4794c2bbcc3d4d364fb8b1c" veid="aa180d33dc5943db90b7a3f74e10de1d" cid="PROP028" type="property" name="ItemName" owner="93c9e00858cf4075a50cf0947b4045b8" creator="" creation-date="05/14/2025 19:58:13" visibility="private">
+            <structural-feature type="VARCHAR(25) NOT NULL" type-id="VARCHAR(25) NOT NULL" />
+          </item>
+          <item id="c2442218316e41818de7bacf0cc020f0" veid="4b7122902f7545568e1c429563d6d824" cid="PROP022" type="property" name="PokemonName" owner="c3321cc4d14c4812bbcec800bf44b9d8" creator="" creation-date="05/14/2025 19:50:56" visibility="private">
+            <structural-feature type="VARCHAR(25) NOT NULL DEFAULT" type-id="VARCHAR(25) NOT NULL DEFAULT" />
+          </item>
+          <item id="56335d2ad0384183b066edc87a17d93f" veid="ec16fd91cb9e4f4180b9739296eb3f24" cid="PROP030" type="property" name="ItemPrice" owner="93c9e00858cf4075a50cf0947b4045b8" creator="" creation-date="05/14/2025 19:58:42" visibility="private">
+            <structural-feature type="DECIMAL NOT NULL DEFAULT" type-id="DECIMAL NOT NULL DEFAULT" />
+          </item>
+          <item id="8ac4de22c3524536998da667375d369c" veid="ea35397f19964eb09680860fa8309c82" cid="PROP027" type="property" name="Item" owner="93c9e00858cf4075a50cf0947b4045b8" creator="" creation-date="05/14/2025 19:58:04" visibility="private">
+            <structural-feature type="INT (FK)" type-id="INT (FK)" />
+          </item>
+          <item id="3e793725a32c4887849013e65ac702a5" veid="ca4e47d3e34944c3b4bf93ef31382bc1" cid="PROP019" type="property" name="PokemonId" owner="c3321cc4d14c4812bbcec800bf44b9d8" creator="" creation-date="05/14/2025 19:49:10" visibility="private">
+            <structural-feature type="INT (PK)" type-id="INT (PK)" />
+          </item>
+          <item id="acfbafb380ae41beb1c0c29be1a67d06" veid="ee5d48283c8a4d71ba65b91de36769c0" cid="PROP021" type="property" name="PokemonSpriteFront" owner="c3321cc4d14c4812bbcec800bf44b9d8" creator="" creation-date="05/14/2025 19:50:39" visibility="private">
+            <structural-feature type="VARCHAR(150) NOT NULL" type-id="VARCHAR(150) NOT NULL" />
+          </item>
+          <item id="f2e1bca11fb74901bf93d7c9a0ff3afd" veid="b2993f289f5e492985e96dc246208faa" cid="PROP031" type="property" owner="e8a71f78d2b3475c89afedfe7728b618" creator="" creation-date="05/14/2025 19:58:58" visibility="private">
+            <structural-feature multiplicity="0..*" type="tbl Items Inventory" type-id="Class:d61cf2136af94e42a7c524a0a973a3f5" />
+          </item>
+        </abstract-items>
+        <layer id="c3693b41b4a3448cbf075bdc34154093" name="Default" visible="true" enabled="true" locked="false">
+          <item id="7555a1579b9044c7be5b6f63ca9957a7" iid="7ae35c809b4e4a48b6fc80bca50c6c66" show-fields="true" creation-date="05/14/2025 19:47:10" order-index="0" type="entity">
+            <layout ax="284" ay="265" awidth="187" aheight="91" x="284" y="265" width="140" height="91" />
+            <classifier />
+            <class />
+          </item>
+          <item id="c3321cc4d14c4812bbcec800bf44b9d8" iid="bbea2ef6c6f64000976ed1519805f6f9" show-fields="true" creation-date="05/14/2025 19:48:57" order-index="1" type="entity">
+            <layout ax="218" ay="455" awidth="319" aheight="115" x="218" y="455" width="140" height="113" />
+            <classifier />
+            <class />
+          </item>
+          <item id="f9909685e2c0446cb10cb3b38d16174b" iid="4e0fdc510dac4c289c85c5bcc7b43df2" creation-date="05/14/2025 19:51:40" order-index="2" type="relation">
+            <layout start-role-position="47,-49" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="378" y1="356" x2="378" y2="455" start-border-pos="0.625" end-border-pos="0.125" start-local-pos="70" end-local-pos="118" name-position="45,-4" name-width="69">
+              <points>
+                <point x="378" y="356" />
+                <point x="378" y="455" />
+              </points>
+            </layout>
+            <relation from="7555a1579b9044c7be5b6f63ca9957a7" from-iid="7ae35c809b4e4a48b6fc80bca50c6c66" to="c3321cc4d14c4812bbcec800bf44b9d8" to-iid="bbea2ef6c6f64000976ed1519805f6f9" />
+          </item>
+          <item id="d61cf2136af94e42a7c524a0a973a3f5" iid="0cc7b56cbfa845219ca000c5433ff63d" show-fields="true" creation-date="05/14/2025 19:52:11" order-index="3" type="entity">
+            <layout ax="643" ay="276" awidth="154" aheight="77" x="643" y="276.5" width="140" height="68" />
+            <classifier />
+            <class />
+          </item>
+          <item id="93c9e00858cf4075a50cf0947b4045b8" iid="deb9b0ed24a243c08aead5aa6674303b" show-fields="true" creation-date="05/14/2025 19:57:58" order-index="4" type="entity">
+            <layout ax="602.5" ay="455" awidth="235" aheight="160" x="602.5" y="455" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="e8a71f78d2b3475c89afedfe7728b618" iid="946ed621ae324dffb2603e7dba29d650" creation-date="05/14/2025 19:58:58" order-index="5" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" start-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="true" auto-path="" x1="720" y1="353" x2="720" y2="455" start-border-pos="0.625" end-border-pos="0.125" start-local-pos="70" end-local-pos="70" name-position="39,-1">
+              <points>
+                <point x="720" y="353" />
+                <point x="720" y="455" />
+              </points>
+            </layout>
+            <relation from="d61cf2136af94e42a7c524a0a973a3f5" from-iid="0cc7b56cbfa845219ca000c5433ff63d" to="93c9e00858cf4075a50cf0947b4045b8" to-iid="deb9b0ed24a243c08aead5aa6674303b" />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>
