@@ -92,6 +92,52 @@ END $$
 
 DELIMITER ;
 
+/* Vues */
+
+CREATE OR REPLACE VIEW vue_inventaire_complet AS
+SELECT ip.Id AS InventairePokemonId, p.PokemonName AS Nom, 'Pokemon' AS Type
+FROM tbl_inventairepokemon ip
+JOIN tbl_pokemons p ON ip.PokemonId = p.PokemonId
+UNION ALL
+SELECT ii.Id AS InventaireItemId, i.ItemName AS Nom, 'Item' AS Type
+FROM tbl_inventaireitem ii
+JOIN tbl_items i ON ii.ItemId = i.ItemId;
+
+
+CREATE OR REPLACE VIEW vue_pokemons_items AS
+SELECT tp.Id AS pokemonId, tp.PokemonName AS Nom, 'Pokemon' AS Type
+FROM tbl_pokemons tp
+UNION ALL
+SELECT ti.Id AS TableItemId, ti.ItemName AS Nom, 'Item' AS Type
+FROM tbl_items ti
+
+/* Triggers */
+
+DELIMITER $$
+
+CREATE TRIGGER before_insert_item_price_check
+BEFORE INSERT ON tbl_items
+FOR EACH ROW
+BEGIN
+    IF NEW.ItemPrice < 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Le prix de l’item ne peut pas être négatif.';
+    END IF;
+END $$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE TRIGGER after_delete_pokemon_cleanup
+AFTER DELETE ON tbl_pokemons
+FOR EACH ROW
+BEGIN
+    DELETE FROM tbl_inventairepokemon WHERE PokemonId = OLD.PokemonId;
+END $$
+
+DELIMITER ;
+
 /* Insertion */
 
 /* Items */

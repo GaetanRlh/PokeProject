@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="14.70" multi-file="no" uid="simp4b0257a41b64474ba1470163c86efdaa" creation-date="05/15/2025 23:14:05">
+  <meta>
+    <name>Pokemon</name>
+    <authors>Oussama Az</authors>
+    <description />
+  </meta>
+  <counters models="1">
+    <entity-names>
+      <counter>
+        <item-type type-id="ui-window" type="Window" />
+        <value>4</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-panel" type="Panel" />
+        <value>4</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-button" type="Button" />
+        <value>4</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-label" type="Label" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-list-box" type="List Box" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-area" type="Area" />
+        <value>1</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="ui-window" type="Window" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-panel" type="Panel" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-button" type="Button" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-label" type="Label" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="size-label" type="Size Label" />
+        <value>3</value>
+      </counter>
+      <counter>
+        <item-type type-id="universal-connector" type="Universal Connector" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-list-box" type="List Box" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="ui-area" type="Area" />
+        <value>5</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.Wireframing.UserInterfaceDiagram</type>
+        <value>1</value>
+      </counter>
+    </diagrams>
+    <fields />
+  </counters>
+  <alias-groups />
+  <management uid="md-52b28bd48c3f496696131e5c0288d642" name="" task-id-sequence="0">
+    <persons>
+      <person id="">
+        <first-name>Oussama</first-name>
+        <last-name>Az</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-67999e72d60f42079c9526ae4831a62d" name="" order-index="-1" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <parameters />
+      <types />
+    </custom-types>
+  </types>
+  <items>
+    <item id="a32fc7d4df7143e295722b0670751780" cid="BTN004" type="ui-button" name="Items" owner="2486d105b9ae4493a3ad303915a7a5da" creation-date="05/15/2025 23:14:53">
+      <button />
+    </item>
+    <item id="7b8544be421e411982365979bec5afaa" cid="BTN004" type="ui-button" name="Flee" owner="2486d105b9ae4493a3ad303915a7a5da" creation-date="05/15/2025 23:14:53">
+      <button />
+    </item>
+    <item id="4ec25ab079b5488198ea2d1aa58a11c7" cid="BTN004" type="ui-button" name="Exit" owner="c887a027cf514cc68eb72b750d90c5c1" creation-date="05/15/2025 23:14:53">
+      <button />
+    </item>
+    <item id="91cee9d9e49d469facad230c1610f8f2" cid="BTN004" type="ui-button" name="Back" owner="a9f022851a544e3ebaf1e903a4ab23a2" creation-date="05/15/2025 23:14:53">
+      <button />
+    </item>
+  </items>
+  <models>
+    <model id="p84a83a0d8b424cb0a12de383d3831261_329385061" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>05/15/2025 23:14:16</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="user-interface" id="pc431553b7a8d4775b1108e5a5af26b56_565606928" name="UserInterfaceDiagram1" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="538,-34">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>05/15/2025 23:14:16</creation-date>
+          <change-date>05/15/2025 23:38:16</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="02cae1863e6e46c5b4bbf5c754adc8c6" cid="WND001" type="ui-window" name="Main Menu" creator="" creation-date="05/15/2025 23:14:18">
+            <owned-items />
+            <window show-min-button="true" show-max-button="true" show-close-button="true" show-size-grip="false" />
+          </item>
+          <item id="4876bac1286344d88b80825104f8c8eb" cid="ELEM004" type="ui-panel" name="Panel4" owner="2486d105b9ae4493a3ad303915a7a5da" creator="" creation-date="05/15/2025 23:38:16" />
+          <item id="c887a027cf514cc68eb72b750d90c5c1" cid="WND002" type="ui-window" name="PokeBox" creator="" creation-date="05/15/2025 23:34:28">
+            <owned-items />
+            <window show-min-button="true" show-max-button="true" show-close-button="true" show-size-grip="false" />
+          </item>
+          <item id="f1f2c69e424a4cd08f097504cb3009cc" cid="BTN003" type="ui-button" name="Shop" owner="a07be58d578d4b1ca0d6261f5bfbe0c6" creator="" creation-date="05/15/2025 23:14:51">
+            <button />
+          </item>
+          <item id="571ced943b7e419ba8a18a302b7ab7f5" cid="BTN001" type="ui-button" name="Catch" owner="a07be58d578d4b1ca0d6261f5bfbe0c6" creator="" creation-date="05/15/2025 23:14:47">
+            <button />
+          </item>
+          <item id="a07be58d578d4b1ca0d6261f5bfbe0c6" cid="ELEM001" type="ui-panel" name="Panel1" owner="02cae1863e6e46c5b4bbf5c754adc8c6" creator="" creation-date="05/15/2025 23:14:29">
+            <owned-items />
+          </item>
+          <item id="909f56b5236d443293106c1c6fd002be" cid="ELEM003" type="ui-panel" name="Panel3" owner="a9f022851a544e3ebaf1e903a4ab23a2" creator="" creation-date="05/15/2025 23:36:34" />
+          <item id="582440ce76ec4657b04510ea9eaa486b" cid="LBL001" type="ui-label" name="Pokemon" owner="a07be58d578d4b1ca0d6261f5bfbe0c6" creator="" creation-date="05/15/2025 23:33:41" />
+          <item id="bce0964e859640f3a35161643d7db470" cid="LST001" type="ui-list-box" name="Pokemon Storage" owner="c887a027cf514cc68eb72b750d90c5c1" creator="" creation-date="05/15/2025 23:35:10">
+            <list-box>
+              <list-items />
+            </list-box>
+          </item>
+          <item id="a9f022851a544e3ebaf1e903a4ab23a2" cid="WND003" type="ui-window" name="Shop" creator="" creation-date="05/15/2025 23:35:39">
+            <owned-items />
+            <window show-min-button="true" show-max-button="true" show-close-button="true" show-size-grip="false" />
+          </item>
+          <item id="9d4f2f2461ff4894acadd86f288e05d9" cid="ELEM002" type="ui-panel" name="Items to buy" owner="a9f022851a544e3ebaf1e903a4ab23a2" creator="" creation-date="05/15/2025 23:36:09" />
+          <item id="08163313a9e24a1d8c1885b0f71a181a" cid="BTN004" type="ui-button" name="Exit" owner="a07be58d578d4b1ca0d6261f5bfbe0c6" creator="" creation-date="05/15/2025 23:14:53">
+            <button />
+          </item>
+          <item id="e6993eee35dc4b87a183e5d645c4a8a9" cid="BTN002" type="ui-button" name="PokeBox" owner="a07be58d578d4b1ca0d6261f5bfbe0c6" creator="" creation-date="05/15/2025 23:14:49">
+            <button />
+          </item>
+          <item id="2486d105b9ae4493a3ad303915a7a5da" cid="WND004" type="ui-window" name="Catch" creator="" creation-date="05/15/2025 23:37:02">
+            <owned-items />
+            <window show-min-button="true" show-max-button="true" show-close-button="true" show-size-grip="false" />
+          </item>
+        </abstract-items>
+        <layer id="81d583f6b491450e8db5cf9d6060102e" name="Default" visible="true" enabled="true" locked="false">
+          <item id="02cae1863e6e46c5b4bbf5c754adc8c6" iid="e91b481a049f4e199f9032a165897476" creation-date="05/15/2025 23:14:18" order-index="0" type="ui-window">
+            <layout ax="604" ay="74" awidth="637" aheight="408" x="604" y="74" width="637" height="408" expanded="604,74,637,408" collapsed="0,0,0,0" />
+          </item>
+          <item id="a07be58d578d4b1ca0d6261f5bfbe0c6" iid="f18cbfea9b3f4058a959b2c853be5d17" container="02cae1863e6e46c5b4bbf5c754adc8c6" container-iid="e91b481a049f4e199f9032a165897476" creation-date="05/15/2025 23:14:29" order-index="1" type="ui-panel">
+            <layout ax="615" ay="119" awidth="613" aheight="345" x="615" y="119" width="613" height="345" expanded="615,119,613,345" collapsed="0,0,0,0" />
+          </item>
+          <item id="e6993eee35dc4b87a183e5d645c4a8a9" iid="d2a4ce4857bb4461ac286f70ef9e97b4" container="a07be58d578d4b1ca0d6261f5bfbe0c6" container-iid="f18cbfea9b3f4058a959b2c853be5d17" creation-date="05/15/2025 23:14:49" order-index="3" type="ui-button">
+            <layout ax="801.5" ay="305" awidth="219" aheight="30" x="801.5" y="305" width="219" height="30" />
+          </item>
+          <item id="f1f2c69e424a4cd08f097504cb3009cc" iid="3ee1917d01544f59a9924c8df56e6467" container="a07be58d578d4b1ca0d6261f5bfbe0c6" container-iid="f18cbfea9b3f4058a959b2c853be5d17" creation-date="05/15/2025 23:14:51" order-index="4" type="ui-button">
+            <layout ax="801.5" ay="353" awidth="219" aheight="30" x="801.5" y="353" width="219" height="30" />
+          </item>
+          <item id="08163313a9e24a1d8c1885b0f71a181a" iid="02e04cd14c13477cb8a506948bdfd2e9" container="a07be58d578d4b1ca0d6261f5bfbe0c6" container-iid="f18cbfea9b3f4058a959b2c853be5d17" creation-date="05/15/2025 23:14:53" order-index="5" type="ui-button">
+            <layout ax="801.5" ay="401" awidth="219" aheight="30" x="801.5" y="401" width="219" height="30" />
+          </item>
+          <item id="582440ce76ec4657b04510ea9eaa486b" iid="8b583f6f18ae49a5847acd2eec369b62" container="a07be58d578d4b1ca0d6261f5bfbe0c6" container-iid="f18cbfea9b3f4058a959b2c853be5d17" creation-date="05/15/2025 23:33:41" order-index="6" type="ui-label">
+            <layout ax="801.5" ay="148" awidth="219" aheight="64" x="801.5" y="148" width="219" height="64" />
+          </item>
+          <item id="571ced943b7e419ba8a18a302b7ab7f5" iid="6061685efd1541f29df83a0f6561ffdc" container="a07be58d578d4b1ca0d6261f5bfbe0c6" container-iid="f18cbfea9b3f4058a959b2c853be5d17" creation-date="05/15/2025 23:14:47" order-index="2" type="ui-button">
+            <layout ax="801.5" ay="256" awidth="219" aheight="30" x="801.5" y="256" width="219" height="30" />
+          </item>
+          <item id="c887a027cf514cc68eb72b750d90c5c1" iid="097a9915e89c497bb2c8a096006291f2" creation-date="05/15/2025 23:34:28" order-index="7" type="ui-window">
+            <layout ax="609" ay="553" awidth="632" aheight="445" x="609" y="553" width="632" height="445" expanded="609,553,632,445" collapsed="0,0,0,0" />
+          </item>
+          <item id="bce0964e859640f3a35161643d7db470" iid="93020201bca04660a302a2a9e6c684e0" container="c887a027cf514cc68eb72b750d90c5c1" container-iid="097a9915e89c497bb2c8a096006291f2" creation-date="05/15/2025 23:35:10" order-index="8" type="ui-list-box">
+            <layout ax="637" ay="643" awidth="585" aheight="328" x="637" y="643" width="585" height="328" />
+          </item>
+          <item id="4ec25ab079b5488198ea2d1aa58a11c7" iid="04d293b8bd99478ebeae1fee064115fc" container="c887a027cf514cc68eb72b750d90c5c1" container-iid="097a9915e89c497bb2c8a096006291f2" creation-date="05/15/2025 23:14:53" order-index="0" type="ui-button">
+            <layout ax="861" ay="597" awidth="100" aheight="30" x="861" y="597" width="100" height="30" />
+          </item>
+          <item id="a9f022851a544e3ebaf1e903a4ab23a2" iid="bfdde2da67a249df91e89a8d4fa4d25b" creation-date="05/15/2025 23:35:39" order-index="9" type="ui-window">
+            <layout ax="609" ay="1069" awidth="613" aheight="387" x="609" y="1069" width="613" height="387" expanded="609,1069,613,387" collapsed="0,0,0,0" />
+          </item>
+          <item id="9d4f2f2461ff4894acadd86f288e05d9" iid="10e45ca2a4524133a3e14b4a792ed964" container="a9f022851a544e3ebaf1e903a4ab23a2" container-iid="bfdde2da67a249df91e89a8d4fa4d25b" creation-date="05/15/2025 23:36:09" order-index="10" type="ui-panel">
+            <layout ax="1081" ay="1126" awidth="119" aheight="121" x="1081" y="1126" width="119" height="121" expanded="1081,1126,119,121" collapsed="0,0,0,0" />
+          </item>
+          <item id="909f56b5236d443293106c1c6fd002be" iid="4765c68726ee4ebdad884a9047bfdaa1" container="a9f022851a544e3ebaf1e903a4ab23a2" container-iid="bfdde2da67a249df91e89a8d4fa4d25b" creation-date="05/15/2025 23:36:34" order-index="11" type="ui-panel">
+            <layout ax="626" ay="1126" awidth="441" aheight="310" x="626" y="1126" width="441" height="310" expanded="626,1126,441,310" collapsed="0,0,0,0" />
+          </item>
+          <item id="91cee9d9e49d469facad230c1610f8f2" iid="7876acf92ec14ce38c4c4288b1488bcf" container="a9f022851a544e3ebaf1e903a4ab23a2" container-iid="bfdde2da67a249df91e89a8d4fa4d25b" creation-date="05/15/2025 23:14:53" order-index="0" type="ui-button">
+            <layout ax="1084" ay="1406" awidth="113" aheight="30" x="1084" y="1406" width="113" height="30" />
+          </item>
+          <item id="2486d105b9ae4493a3ad303915a7a5da" iid="28c881cdf4b142f0aac80fbf67d36d3e" creation-date="05/15/2025 23:37:02" order-index="12" type="ui-window">
+            <layout ax="617" ay="1512" awidth="605" aheight="345" x="617" y="1512" width="605" height="345" expanded="617,1512,605,345" collapsed="0,0,0,0" />
+          </item>
+          <item id="7b8544be421e411982365979bec5afaa" iid="7c76b9bcd3b2470d8ec9e7eb87ab6eab" container="2486d105b9ae4493a3ad303915a7a5da" container-iid="28c881cdf4b142f0aac80fbf67d36d3e" creation-date="05/15/2025 23:14:53" order-index="0" type="ui-button">
+            <layout ax="1097" ay="1785" awidth="100" aheight="30" x="1097" y="1785" width="100" height="30" />
+          </item>
+          <item id="4876bac1286344d88b80825104f8c8eb" iid="3023c8b726b741d3821b29c850919ddd" container="2486d105b9ae4493a3ad303915a7a5da" container-iid="28c881cdf4b142f0aac80fbf67d36d3e" creation-date="05/15/2025 23:38:16" order-index="13" type="ui-panel">
+            <layout ax="633" ay="1571" awidth="564" aheight="197" x="633" y="1571" width="564" height="197" expanded="633,1571,564,197" collapsed="0,0,0,0" />
+          </item>
+          <item id="a32fc7d4df7143e295722b0670751780" iid="0eaf2cf500cc42cf9e878ace0cbb429a" container="2486d105b9ae4493a3ad303915a7a5da" container-iid="28c881cdf4b142f0aac80fbf67d36d3e" creation-date="05/15/2025 23:14:53" order-index="0" type="ui-button">
+            <layout ax="967" ay="1785" awidth="100" aheight="30" x="967" y="1785" width="100" height="30" />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>
